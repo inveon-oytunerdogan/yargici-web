@@ -29,3 +29,10 @@ After('@log_out') do
   acc = find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").find(:css, 'a[href="/logout"]')
   acc.click
 end
+
+After('@clear_basket') do
+  visit 'https://thedealoutlet.com/'
+  find("#mobile-cart-trigger").click
+  find(".delete-shopping-cart-item-icon.position-absolute.border-0.bg-white.p-0").click
+  find(".btn-remove-item.btn-cart-item-actions.btn.btn-site-green.float-right.p-2.text-white.border-0").click
+end

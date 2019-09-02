@@ -11,7 +11,7 @@ And(/^I visit the first product detail page$/) do
   sleep 5
   puts "Visiting product detail page"
   products = all(".product-box-image-container")
-  products[0].click
+  products[1].click
   sleep 2
 end
 
@@ -104,12 +104,16 @@ end
 And(/^I enter credit card information$/) do |table|
   table = table.raw[0]
   # table is a table.hashes.keys # => [:1212 1212 1221 1212, :12, :21, :123]
-  sleep 10
-
-  Capybara.using_wait_time(30) do
-    find(:xpath, '//*[@id="modal-wrapper"]/div/div/div/form/div[1]/input').set(table[0])
+  sleep 15
+ # find("input[data-checkout='card-number']").set table[0]
+  page.within_frame('cko-iframe-id') do
+    all(".input-control")[0].set(table[0])
+    all(".input-control")[1].set(table[1])
+    all(".input-control")[2].set(table[2])
+    sleep 5
+    all(".input-control")[3].click
+    all(".input-control")[3].set("123")
   end
-
 
 end
 
@@ -193,4 +197,10 @@ end
 
 And(/^I click login button$/) do
   find(".login-button.btn.btn-site-green.w-100").click
+end
+
+And(/^I see transaction is aborted message$/) do
+  text = find("#checkout-confirm-order-load").text
+  sleep 10
+  expect(text).to include("The transaction has aborted.")
 end

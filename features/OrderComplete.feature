@@ -1,13 +1,10 @@
 Feature: Demo
   Make sure Cucumber and Capybara are wired up properly
-
+  @clear_basket
   Scenario: Visit home page through checkout without login
     Given I visit the Deal homepage
     And I navigate to women category
     When I visit the first product detail page
-    And I click add to basket
-    Then I should see error message "Please select Size"
-    And I close information box
     And I select size
     When I click add to basket
     Then I should see mini cart appears with product added
@@ -28,7 +25,8 @@ Feature: Demo
     And I should see "#paymentForm" part is disabled
     And I save address
     And I enter credit card information
-    |1212 1212 1221 1212| 12 | 21 | 123|
+    |4242 4242 4242 4242| 12 | 21 | 123|
     Then I click on place my order button
+    And I see transaction is aborted message
 
 
