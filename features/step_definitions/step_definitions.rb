@@ -36,13 +36,13 @@ Then(/^I should see error message "([^"]*)"$/) do |arg|
 end
 
 And(/^I close information box$/) do
-  find(".modal.fade.show").find(".close").click
+  find(".modal.fade.show",match: :first).find(".close").click
   puts "Closing information box"
   sleep 2
 end
 
 And(/^I select size$/) do
-  find(".size-list-label", match: :first).click
+  find(".size-list-label:not(.attribute-value-out-of-stock)", match: :first).click
 end
 
 Then(/^I should see mini cart appears with product added$/) do
@@ -55,6 +55,7 @@ When(/^I click on view full bag$/) do
 end
 
 And(/^I should be redirected to "([^"]*)"$/) do |arg|
+  sleep 2
   expect(page.current_url).to include(arg)
   puts "Visiting #{page.current_url}"
 end
@@ -203,4 +204,117 @@ And(/^I see transaction is aborted message$/) do
   text = find("#checkout-confirm-order-load").text
   sleep 10
   expect(text).to include("The transaction has aborted.")
+end
+
+And(/^I click on "([^"]*)" filter combobox$/) do |arg|
+  find(".bg-white.filter-left-menu.common-mobile-menu").find(".filter-container.d-md-flex.justify-content-between.flex-nowrap").find(".filter-item."+arg).click
+end
+
+And(/^I select dresses on combobox$/) do
+  list  = find(".bg-white.filter-left-menu.common-mobile-menu").find(".filter-container.d-md-flex.justify-content-between.flex-nowrap").find(".filter-item.cats").find('a[href="/c/dresses-26"]')
+  list.click
+end
+
+And(/^I select size on combobox$/) do
+  find(".filter-item.size").find(".spec-list.p-0.m-0.no-list.size.scroll-class").all("li")[0].click
+end
+
+Then(/^I should see selected filters$/) do
+  expect(page).to have_link("Remove Filter")
+  expect(page).to have_selector(".remove-filtered-spec.text-white.position-relative.d-block")
+  expect(page).to have_selector(".spec-box.text-spec.d-inline-block.ease.text-left.active.selected-spec")
+end
+
+Then(/^I select color on combobox$/) do
+  find(".filter-item.color").find(".spec-list.p-0.m-0.no-list.color").all("li")[0].click
+end
+
+And(/^I select brand on combobox$/) do
+  find(".filter-item.brand").find(".spec-list.p-0.m-0.no-list.brand").all("li")[0].click
+end
+
+And(/^I see products are listed$/) do
+  number_of_product = find(".product-counts-info-row.position-absolute.d-none.d-md-block", match: :first).text
+  number_of_product.split(" ")[0].to_i.should be > 0
+end
+
+And(/^I select price low to high$/) do
+  find(".filter-item.order-by", match: :first).find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[3].click
+end
+
+Then(/^I should see products are sorted price low to high$/) do
+  prices = find(".container-fluid.product-list-container.p-0").all(".product-price-list.list-inline.text-left.p-0")
+  arr = []
+  prices.each{|x|
+    arr << x.find(".d-block.product-box-price").text.split(" ")[0]
+
+  }
+  puts arr
+  expect(arr).to eq(arr.sort)
+end
+
+And(/^I select price high to low$/) do
+  find(".filter-item.order-by", match: :first).find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[4].click
+end
+
+
+Then(/^I should see products are sorted price high to low$/) do
+  prices = find(".container-fluid.product-list-container.p-0").all(".product-price-list.list-inline.text-left.p-0")
+  arr = []
+  prices.each{|x|
+    arr << x.find(".d-block.product-box-price").text.split(" ")[0]
+
+  }
+
+  arr.sort { |a,b| b <=> a}
+  puts arr
+  expect(arr).to eq(arr)
+
+
+end
+
+Then(/^I click forgot password$/) do
+  find(".d-inline-block.text-site-light-gray").click
+end
+
+And(/^I click reset my password button$/) do
+  find(".btn.btn-site-green.w-100").click
+end
+
+Then(/^I should see password recovery email is sent message$/) do
+  expect(find(".font-italic.rounded.p-2.mb-2.in-no-list.bg-success.text-white").text).to match("Your password change information has been sent to your e-mail address.")
+end
+
+When(/^I click on add to favorites button$/) do
+  find(".far.fa-heart").click
+end
+
+Then(/^I should see product is added to favorites$/) do
+  expect(find(".favorite-result-message").text).to include("Related product has been added to your favorite list. You can access your favorite list from the ")
+
+end
+
+And(/^I close favorite product added information box$/) do
+  sleep 2
+  find("#add-to-favorites-modal").find('span',  :text => "Close").click
+
+end
+
+Then(/^I should see "([^"]*)" on heart logo$/) do |arg|
+  sleep 2
+  expect(find(:xpath,"/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[2]/a/span").text).to match(arg)
+end
+
+And(/^I navigate to favorites page$/) do
+  visit 'https://thedealoutlet.com/customer/favouritesubscriptions'
+end
+
+Then(/^I should see favorite products is not empty$/) do
+  expect(page).to have_selector(".favourite-table")
+end
+
+
+When(/^I click on edit button$/) do
+  find(".add-to-cart-from-fav.bg-white.border-0").click
+  expect(page).to have_selector("#product-details-form")
 end
