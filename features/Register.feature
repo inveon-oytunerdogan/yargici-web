@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
-  Scenario: Visit product detail page
+  Scenario: Register a new user
     Given I visit the Deal homepage
     And I navigate to login page
     Then I should be redirected to "/login"

@@ -11,7 +11,7 @@ And(/^I visit the first product detail page$/) do
   sleep 5
   puts "Visiting product detail page"
   products = all(".product-box-image-container")
-  products[1].click
+  products[0].click
   sleep 2
 end
 

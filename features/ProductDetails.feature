@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+  @clear_basket
   Scenario: Visit product detail page
     Given I visit the Deal homepage
     And I navigate to women category
