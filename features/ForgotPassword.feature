@@ -1,5 +1,4 @@
 Feature: Forgetting password and recovery steps
-  Make sure Cucumber and Capybara are wired up properly
 
   Scenario: Recover password
     Given I visit the Deal homepage

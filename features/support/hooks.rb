@@ -25,7 +25,9 @@ end
 
 After('@log_out') do
   visit 'https://thedealoutlet.com/'
-  find(".d-inline-block.align-middle.customer-list-item").hover
+  sleep 2
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]").hover
+  #find(".d-inline-block.align-middle.customer-list-item").find(".customer-menu.customer-menu-action.d-block.bg-white.border-0").hover
   acc = find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").find(:css, 'a[href="/logout"]')
   acc.click
 end

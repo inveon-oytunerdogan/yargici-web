@@ -22,6 +22,6 @@ Feature: Visiting category pages to apply some filter
       Given I visit the Deal homepage
       And I navigate to women category
       Then I should be redirected to "/c/women-3"
-      When I click on "sort" filter combobox
+      When I click on "order-by" filter combobox
       And I select price low to high
 

@@ -316,5 +316,65 @@ end
 
 When(/^I click on edit button$/) do
   find(".add-to-cart-from-fav.bg-white.border-0").click
+  sleep 2
   expect(page).to have_selector("#product-details-form")
+  sleep 2
+end
+
+And(/^I search for product "([^"]*)"$/) do |arg|
+  find("#small-searchterms").set(arg)
+  find("#search-submit").click
+  sleep 2
+  expect(page.current_url).to include(arg.gsub(' ', '+'))
+end
+
+And(/^I should see "([^"]*)" product is added to basket$/) do |arg|
+  product_name = all(".mini-cart-product-name")[1].text
+  expect(product_name).to match(arg)
+end
+
+Then(/^I check footer links$/) do |table|
+  # table is a table.hashes.keys # => [:PRIVACY & COOKIES POLICY]
+  table = table.raw[0]
+  sleep 2
+  footer = find(".footer-list-menu.list-inline.m-0.p-0.text-center").all("li")
+  expect(footer[0].text).to eq(table[0])
+  expect(footer[1].text).to eq(table[1])
+  expect(footer[2].text).to eq(table[2])
+  expect(footer[3].text).to eq(table[3])
+end
+
+When(/^I click on "([^"]*)" on footer$/) do |arg|
+  footer = find(".footer-list-menu.list-inline.m-0.p-0.text-center")
+  footer.find("a", :text => arg, match: :first).click
+end
+
+And(/^I click on my addresses button$/) do
+  find(".customer-menu.customer-menu-action.d-block.bg-white.border-0").hover
+    find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").all("li")[1].click
+end
+
+And(/^I click add new address button$/) do
+  find(".btn.btn-site-green.w-100.mt-md-5").click
+  sleep 2
+end
+
+And(/^I click save button$/) do
+  find(".btn.btn-site-green.w-100").click
+end
+
+When(/^I click on edit button for addresses$/) do
+  find(".btn-btn-site-black-w-100", match: :first).click
+end
+
+And(/^I logout$/) do
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").hover
+  acc = find(:xpath,"/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/div/ul/li[4]/a/span")
+  acc.click
+end
+
+Then(/^I delete address$/) do
+  find(".address-edit-button.d-none.d-md-block.bg-white.border-0.w-100.h-100", match: :first).click
+  sleep 1
+  page.driver.browser.switch_to.alert.accept
 end

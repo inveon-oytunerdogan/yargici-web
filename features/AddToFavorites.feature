@@ -1,7 +1,7 @@
 Feature: Visiting category pages to apply some filter
 
-  @clear_basket @clear_favorites
-  Scenario: Filter category
+  @clear_basket @clear_favorites @log_out
+  Scenario: Add products to favorites
     Given I visit the Deal homepage
     And I navigate to women category
     And I visit the first product detail page
