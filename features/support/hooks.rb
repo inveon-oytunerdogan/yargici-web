@@ -35,13 +35,12 @@ end
 After('@clear_basket') do
   visit 'https://thedealoutlet.com/'
   find("#mobile-cart-trigger").click
-  find(".delete-shopping-cart-item-icon.position-absolute.border-0.bg-white.p-0").click
-  find(".btn-remove-item.btn-cart-item-actions.btn.btn-site-green.float-right.p-2.text-white.border-0").click
+  find(".delete-shopping-cart-item-icon.position-absolute.border-0.bg-white.p-0", match: :first).click
+  find(".btn-remove-item.btn-cart-item-actions.btn.btn-site-green.float-right.p-2.text-white.border-0", match: :first).click
 end
 
 After('@clear_favorites') do
   visit 'https://thedealoutlet.com/customer/favouritesubscriptions'
-  find(".delete-favourite-subscription.bg-white.border-0.w-100.h-100").click
+  find("button.delete-favourite-subscription.bg-white.border-0.w-100.h-100", match: :first).click
   page.driver.browser.switch_to.alert.accept
-  expect(page).to have_content("There are no products in your favorite list.")
 end

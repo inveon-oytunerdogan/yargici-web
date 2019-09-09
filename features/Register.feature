@@ -4,8 +4,8 @@ Feature: Visiting product details and checking page properties
   Scenario: Register a new user
     Given I visit the Deal homepage
     And I navigate to login page
-    Then I should be redirected to "/login"
     And I click create an account button
+    Then I should be redirected to "/register"
     Then I enter "#FirstName" as "Register  First Name"
     And I enter "#LastName" as "Register Last Name"
     And I generate email with date time

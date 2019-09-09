@@ -3,7 +3,7 @@ Feature: Visiting product details and checking page properties
   @clear_basket
   Scenario: Visit product detail page
     Given I visit the Deal homepage
-    And I navigate to women category
+    And I search for product "Marice Canvas Dark Blue Slip-ons"
     When I visit the first product detail page
     Then I see navigation bar exists
     And I see search bar exists

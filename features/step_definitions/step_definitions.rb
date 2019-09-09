@@ -8,7 +8,7 @@ Given(/^I visit the Deal homepage$/) do
 end
 
 And(/^I visit the first product detail page$/) do
-  sleep 5
+  sleep 2
   puts "Visiting product detail page"
   products = all(".product-box-image-container")
   products[0].click
@@ -377,4 +377,25 @@ Then(/^I delete address$/) do
   find(".address-edit-button.d-none.d-md-block.bg-white.border-0.w-100.h-100", match: :first).click
   sleep 1
   page.driver.browser.switch_to.alert.accept
+end
+
+And(/^I click on promotion code$/) do
+  find("span[data-key-name='promotion.code']").click
+end
+
+And(/^I enter promotion code as "([^"]*)"$/) do |arg|
+  find("input[name='discountcouponcode']", match: :first).set(arg)
+end
+
+And(/^I click apply promotion code button$/) do
+  find("input[name='applydiscountcouponcode']", match: :first).click
+end
+
+And(/^I should see remove discount button$/) do
+  sleep 10
+  expect(page).to have_selector(".cb.remove-discount-button.btn.btn--ys")
+end
+
+And(/^I should see discount is applied$/) do
+  find(".order-small-price.order-total-value-column.text-right").text
 end
