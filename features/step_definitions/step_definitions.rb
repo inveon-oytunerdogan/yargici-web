@@ -487,3 +487,22 @@ end
 Then(/^I should see mini cart appears with product added on mobile$/) do
   expect(page).to have_selector("#mini-cart")
 end
+
+Then(/^I navigate to my addresses$/) do
+  visit 'https://thedealoutlet.com/customer/addresses'
+
+end
+
+  And(/^I edit first address$/) do
+  find(".col-12.col-md-2", match: :first).first(".btn-btn-site-black-w-100").click
+end
+
+And(/^I logout on my account$/) do
+  visit 'https://thedealoutlet.com/customer/changepassword'
+  all("[href='/logout']")[1].click
+end
+
+And(/^I logout on my account on mobile$/) do
+  find(".account-menu-header.text-white").click
+  all("[href='/logout']")[1].click
+end
