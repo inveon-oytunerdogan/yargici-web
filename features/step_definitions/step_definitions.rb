@@ -46,6 +46,7 @@ And(/^I select size$/) do
 end
 
 Then(/^I should see mini cart appears with product added$/) do
+  sleep 5
   expect(page).to have_selector("#mini-cart")
 end
 
@@ -55,7 +56,7 @@ When(/^I click on view full bag$/) do
 end
 
 And(/^I should be redirected to "([^"]*)"$/) do |arg|
-  sleep 2
+  sleep 3
   expect(page.current_url).to include(arg)
   puts "Visiting #{page.current_url}"
 end
@@ -93,8 +94,7 @@ And(/^I enter delivery address "([^"]*)"$/) do |arg|
 end
 
 And(/^I should see "([^"]*)" part is disabled$/) do |arg|
-  expect(page).to have_selector(arg, :true)
-
+  expect(page).to have_selector(arg, visible: false)
 end
 
 And(/^I save address$/) do
@@ -105,7 +105,7 @@ end
 And(/^I enter credit card information$/) do |table|
   table = table.raw[0]
   # table is a table.hashes.keys # => [:1212 1212 1221 1212, :12, :21, :123]
-  sleep 15
+  sleep 20
  # find("input[data-checkout='card-number']").set table[0]
   page.within_frame('cko-iframe-id') do
     all(".input-control")[0].set(table[0])
@@ -156,7 +156,7 @@ And(/^I see footer bar exists$/) do
 end
 
 And(/^I see account items exists$/) do
-  expect(page).to have_selector(".ajax-header-container.d-inline-block.align-middle.float-right")
+  expect(page).to have_selector(".customer-list-item")
 end
 
 And(/^I navigate to login page$/) do
@@ -206,7 +206,7 @@ And(/^I see transaction is aborted message$/) do
   expect(text).to include("The transaction has aborted.")
 end
 
-And(/^I click on "([^"]*)" filter combobox$/) do |arg|
+  And(/^I click on "([^"]*)" filter combobox$/) do |arg|
   find(".bg-white.filter-left-menu.common-mobile-menu").find(".filter-container.d-md-flex.justify-content-between.flex-nowrap").find(".filter-item."+arg).click
 end
 
@@ -290,6 +290,7 @@ When(/^I click on add to favorites button$/) do
 end
 
 Then(/^I should see product is added to favorites$/) do
+  sleep 2
   expect(find(".favorite-result-message").text).to include("Related product has been added to your favorite list. You can access your favorite list from the ")
 
 end
@@ -398,4 +399,91 @@ end
 
 And(/^I should see discount is applied$/) do
   find(".order-small-price.order-total-value-column.text-right").text
+end
+
+
+And(/^I click on hamburger$/) do
+  find("#mobile-menu-toggler").click
+end
+
+And(/^I click dresses on menu$/) do
+
+  find("a[href='/c/dresses-26']").click
+  sleep 5
+end
+
+And(/^I click on filter$/) do
+  find(".toggle-filter-area.text-site-green.border-0.w-100.bg-white.p-2").click
+end
+
+And(/^I click on size$/) do
+  find(".filter-item.size").find(".spec-filter-head.btn-cursor").click
+end
+
+And(/^I select size on mobile$/) do
+  find(".spec-item-container", match: :first).click
+end
+
+And(/^I click on brand on mobile$/) do
+  find(".filter-item.brand").find(".spec-filter-head.btn-cursor").click
+end
+
+And(/^I select brand on mobile$/) do
+  find(".spec-list.p-0.m-0.no-list.brand").find(".spec-item-container", match: :first).click
+end
+
+And(/^I click on color filter on mobile$/) do
+  find(".filter-item.color").click
+end
+
+And(/^I select color on mobile$/) do
+  find(".spec-list.p-0.m-0.no-list.color").find(".spec-item-container", match: :first).click
+end
+
+And(/^I click on filter by price on mobile$/) do
+  find(".filter-item.price").find(".spec-filter-head.btn-cursor").click
+end
+
+And(/^I click on filter button$/) do
+  find(".desktop-filter-button.btn.btn-site-black.d-md-none").click
+end
+
+And(/^I click on sort$/) do
+  find(".toggle-sort-area.text-site-green.border-0.w-100.bg-white.p-2").click
+end
+
+
+And(/^I select price low to high on mobile$/) do
+  find(".mobile-sort-container.mt-2.sort-arrow.position-relative").find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[3].click
+end
+
+And(/^I click on my account on mobile$/) do
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").click
+end
+
+And(/^I click on my addresses button on mobile$/) do
+  find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").all("li")[1].click
+end
+
+And(/^I click add new address button on mobile$/) do
+  find(".account-menu-header.text-white").click
+end
+
+Then(/^I delete address on mobile$/) do
+  find(".address-item.border-bottom.border-site-light-gray", match: :first).find(".btn.btn-outline-site-black.d-block.d-md-none.w-100").click
+  page.driver.browser.switch_to.alert.accept
+end
+
+And(/^I visit the first product detail page on mobile$/) do
+  find(".product-grid-item-container", match: :first).click
+end
+
+And(/^I click add to basket on mobile$/) do
+  find(".mobile-add-to-cart-from-fav.btn.btn-site-black").click
+  sleep 1
+  find(".size-list-label", match: :first).click
+end
+
+Then(/^I should see mini cart appears with product added on mobile$/) do
+  expect(page).to have_selector("#mini-cart")
 end

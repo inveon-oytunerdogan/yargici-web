@@ -26,10 +26,23 @@ end
 After('@log_out') do
   visit 'https://thedealoutlet.com/'
   sleep 2
-  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]").hover
+  #find(".d-inline-block.align-middle.customer-list-item").hover
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").hover
   #find(".d-inline-block.align-middle.customer-list-item").find(".customer-menu.customer-menu-action.d-block.bg-white.border-0").hover
-  acc = find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").find(:css, 'a[href="/logout"]')
-  acc.click
+  sleep 1
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/div/ul/li[4]/a/span").click
+
+end
+
+After('@mobile_log_out') do
+  visit 'https://thedealoutlet.com/'
+  sleep 2
+  #find(".d-inline-block.align-middle.customer-list-item").hover
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").click
+  #find(".d-inline-block.align-middle.customer-list-item").find(".customer-menu.customer-menu-action.d-block.bg-white.border-0").hover
+  sleep 1
+  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/div/ul/li[4]/a/span").click
+
 end
 
 After('@clear_basket') do
@@ -43,4 +56,21 @@ After('@clear_favorites') do
   visit 'https://thedealoutlet.com/customer/favouritesubscriptions'
   find("button.delete-favourite-subscription.bg-white.border-0.w-100.h-100", match: :first).click
   page.driver.browser.switch_to.alert.accept
+end
+
+After('@mobile_clear_favorites') do
+  visit 'https://thedealoutlet.com/customer/favouritesubscriptions'
+  sleep 1
+  find(".delete-favourite-subscription.mobile-delete-fav.bg-white.border-0.d-md-none.p-0", match: :first).click
+  page.driver.browser.switch_to.alert.accept
+end
+
+
+Before('@mobile') do
+  page.driver.browser.manage.window.resize_to(375,667)
+end
+
+
+Before('@desktop') do
+  page.driver.browser.manage.window.resize_to(1440,900)
 end

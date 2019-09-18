@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-  @clear_basket
+  @clear_basket @desktop
   Scenario: Visit product detail page
     Given I visit the Deal homepage
     And I search for product "Marice Canvas Dark Blue Slip-ons"

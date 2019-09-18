@@ -6,11 +6,24 @@ require 'capybara'
 require 'capybara/dsl'
 require 'rest-client'
 
-$screenshot_counter = 0
-Capybara.save_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
 
-Capybara.default_driver = :selenium
-Capybara.javascript_driver = :selenium
+Capybara.save_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome,args: ["--window-size=1440,900"])
+end
+
+
+
+Capybara.javascript_driver = :chrome
+
+
+Capybara.configure do |config|
+  config.default_max_wait_time = 10 # seconds
+  config.default_driver        = :selenium
+end
+
+#Capybara.default_driver = :selenium
+#Capybara.javascript_driver = :selenium
 
 Capybara.app_host = "http://www.tureng.com"
 

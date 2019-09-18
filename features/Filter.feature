@@ -1,6 +1,5 @@
 Feature: Visiting category pages to apply some filter
 
-
   Scenario: Filter category
     Given I visit the Deal homepage
     And I navigate to women category
