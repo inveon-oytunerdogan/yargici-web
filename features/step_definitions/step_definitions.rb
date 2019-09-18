@@ -499,7 +499,7 @@ end
 
 And(/^I logout on my account$/) do
   visit 'https://thedealoutlet.com/customer/changepassword'
-  all("[href='/logout']")[1].click
+  find(".account-menu-list.no-list.m-0.p-0").find("[href='/logout']").click
 end
 
 And(/^I logout on my account on mobile$/) do
