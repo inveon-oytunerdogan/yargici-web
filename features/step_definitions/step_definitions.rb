@@ -499,7 +499,7 @@ end
 
 And(/^I logout on my account$/) do
   sleep 2
-  find(".account-menu-list.no-list.m-0.p-0").find("[href='/logout']").click
+  find(".account-menu-list.no-list.m-0.p-0").all("li")[6].click
 end
 
 And(/^I logout on my account on mobile$/) do
