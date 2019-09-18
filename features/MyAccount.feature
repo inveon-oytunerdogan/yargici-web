@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
-   Scenario: Add new address to user logged in
+   Scenario: Checking my account features on desktop
      Given I visit the Deal homepage
      And I navigate to login page
      Then I enter "#Email" as "oytun.erdogan@inveon.com.tr"
