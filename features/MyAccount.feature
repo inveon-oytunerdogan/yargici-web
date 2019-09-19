@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-  @log_out
+
    Scenario: Checking my account features on desktop
      Given I visit the Deal homepage
      And I navigate to login page
@@ -15,6 +15,7 @@ Feature: Visiting product details and checking page properties
      And I enter "#addressLine" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul"
      And I enter "#zipCode" as "34333"
      And I click save button
+     And I logout
      #And I logout on my account
 
 
