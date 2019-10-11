@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
-   @clear_basket @log_out
+ @desktop  @clear_basket @log_out
    Scenario: Order complete through product details and cart
     Given I visit the Yargici homepage
     And I navigate to login page

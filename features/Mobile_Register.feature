@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-  @desktop @log_out
+ @log_out @mobile
  Scenario: Register a new user
     Given I visit the Yargici homepage
     And I navigate to register user page

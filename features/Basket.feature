@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+ @desktop
    Scenario: Login page through favourites button
     Given I visit the Yargici homepage
     Then I click on Giyim on navigation

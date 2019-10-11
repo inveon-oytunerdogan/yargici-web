@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-   @log_out
+   @log_out @desktop
    Scenario: Login on home page
      Given I visit the Yargici homepage
      And I navigate to login page
@@ -10,7 +10,7 @@ Feature: Visiting product details and checking page properties
      When I click login button
      Then I should be redirected to "/?login=1"
 
-
+ @desktop
  Scenario: Logging out on my account page
   Given I visit the Yargici homepage
   And I navigate to login page

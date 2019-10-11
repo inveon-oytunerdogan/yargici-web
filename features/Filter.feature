@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+  @desktop
  Scenario: Visiting category pages and applying filter options
    Given I visit the Yargici homepage
    #And I close privacy policy message
@@ -8,7 +8,7 @@ Feature: Visiting product details and checking page properties
    And I apply size filter
    Then I should see filter is applied
    And I remove applied filter
-
+  @desktop
    Scenario: Checking price range filter and products listed
      Given I visit the Yargici homepage
      And I click on Giyim on navigation

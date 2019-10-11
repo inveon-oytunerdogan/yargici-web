@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
- @log_out
+ @desktop @log_out
  Scenario:Adding new address on my account
   Given I visit the Yargici homepage
   And I navigate to login page

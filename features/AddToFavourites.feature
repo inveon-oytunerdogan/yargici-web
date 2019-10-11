@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+ @desktop
    Scenario: Login page through favourites button
     Given I visit the Yargici homepage
     Then I click on Giyim on navigation
@@ -9,7 +9,7 @@ Feature: Visiting product details and checking page properties
     And I should be redirected to "login"
 
 
-   @clear_favourites @log_out
+   @clear_favourites @log_out @desktop
    Scenario: Logged in user add to favourites
     Given I visit the Yargici homepage
     And I navigate to login page

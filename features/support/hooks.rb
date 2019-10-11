@@ -39,6 +39,9 @@ Before('@mobile') do
   page.driver.browser.manage.window.resize_to(375,667)
 end
 
+Before('@desktop') do
+  page.driver.browser.manage.window.resize_to(1440,900)
+end
 
 
 After('@clear_addresses') do

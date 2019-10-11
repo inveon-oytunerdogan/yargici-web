@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+ @desktop
    Scenario: Checking footer links
     Given I visit the Yargici homepage
     Then I check footer links under YARGICI
@@ -14,8 +14,8 @@ Feature: Visiting product details and checking page properties
     When I click on arrow on newsletter
     Then I should see message box with text "Kaydolduğunuz İçin Teşekkür Ederiz"
     And I click on close button
-    
-    
+
+ @desktop
     Scenario: Checking wrong email on newsletter
      Given I visit the Yargici homepage
      When I enter "#NewsletterEmail" as "serbest"
@@ -24,7 +24,7 @@ Feature: Visiting product details and checking page properties
      Then I should see message box with text "Geçerli e-posta giriniz"
      And I click on close button
 
-
+ @desktop
      Scenario: Checking each footer links
       Given I visit the Yargici homepage
       And I click on "Hikayemiz" on footer
