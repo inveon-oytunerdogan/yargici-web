@@ -1,11 +1,13 @@
-Feature: Forgetting password and recovery steps
+Feature: Visiting product details and checking page properties
+  Make sure Cucumber and Capybara are wired up properly
 
-  Scenario: Recover password
-    Given I visit the Deal homepage
-    And I navigate to login page
-    Then I should be redirected to "/login"
-    When I click forgot password
-    Then I should be redirected to "/passwordrecovery"
-    Then I enter "#Email" as "oytun.erdogan@inveon.com.tr"
-    When I click reset my password button
-    Then I should see password recovery email is sent message
+ Scenario: Requesting new password
+  Given I visit the Yargici homepage
+  And I navigate to login page
+  And I click on forgot password button
+  And I enter "#Email" as "oytun.erdogan@inveon.com.tr"
+  And I click on send password button
+  And I should see password change mail sent message
+
+
+

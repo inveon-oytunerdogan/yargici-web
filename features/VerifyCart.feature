@@ -1,13 +1,13 @@
-Feature: Visiting category pages to apply some filter
-
+Feature: Visiting product details and checking page properties
+  Make sure Cucumber and Capybara are wired up properly
   @clear_basket
-  Scenario: Add product to basket and verify
-    Given I visit the Deal homepage
-    And I search for product "Team Ball Black Large Backpack"
-    And I visit the first product detail page
-    And I click add to basket
-    And I should see "Team Ball Black Large Backpack" product is added to basket
-
-
+ Scenario: Add product to basket and verify cart
+   Given I visit the Yargici homepage
+   And I search for "sırt çantası"
+   And I visit first product detail page
+   And I add product to basket
+   And I visit basket
+   And I click product on checkout
+   And I should see visited product is added to basket
 
 

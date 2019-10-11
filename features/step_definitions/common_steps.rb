@@ -126,16 +126,7 @@ Given(/^I visit main page$/) do
   page.driver.browser.manage.window.maximize
 end
 
-When(/^I search for "([^"]*)"$/) do |term|
-  case term
-    when "<default>"
-      find_by_id('searchTerm').set $search_term
-    else
-      find_by_id('searchTerm').set term
-  end
 
-  find("input.btn-turengsearch", match: :first).click
-end
 
 Then(/^Results should contain term "([^"]*)"$/) do |term|
   find_by_id('englishResultsTable', match: :first).find('tr', text: term)
@@ -148,4 +139,3 @@ end
 Then(/^I wait for "([^"]*)" seconds$/) do |second|
   sleep second.to_i
 end
-

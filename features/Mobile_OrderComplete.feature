@@ -1,31 +1,38 @@
-Feature: Demo
+Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-  @clear_basket @mobile
-  Scenario: Visit home page through checkout without login on mobile browser
-    Given I visit the Deal homepage
-    And I search for product "Shadow Switch Dry Brush Makeup Remover"
-    When I visit the first product detail page
-    When I click add to basket
-    Then I should see mini cart appears with product added
-    When I click on view full bag
-    And  I should be redirected to "/cart"
-    When I click on Confirm button on checkout
+
+   @mobile @clear_basket_mobile
+   Scenario: Order complete through product details and cart on mobile
+    Given I visit the Yargici homepage
+    And I navigate to login page on mobile
     Then I should be redirected to "/login"
-    And I click on Checkout as Guest
-    And I should be redirected to "/checkout/onepagecheckout"
-    Then I enter mail address "oytun.erdogan@inveon.com.tr"
-    And I enter "#firstName" as "Oytun"
-    And I enter "#lastName" as "Erdoğan"
-    And I enter "#Phone" as "00905375120880"
-    And I select UAE on dropdown
-    And I select Dubai on dropdown
-    And I enter delivery address "Test Test test"
-    And I should see "#deliveryOptionsContainer" part is disabled
-    And I should see "#paymentForm" part is disabled
-    And I save address
-    And I enter credit card information
-      |4242 4242 4242 4242| 12 | 21 | 123|
-    Then I click on place my order button
-#    And I see transaction is aborted message
-### Proper test card will be added
+    Then I enter "#Email" as "oytun.erdogan@inveon.com.tr"
+    And I enter "#Password" as "12345678"
+    When I click login button
+    And I click on hamburger
+    Then I click on Giyim on navigation
+    And I visit first product detail page
+    And I select size variant on mobile
+    And I add product to basket on mobile
+    And I visit basket on mobile
+    And I click on checkout button
+    And I select shipment and billing address checkboxes
+    And I click on complete button between basket and cart
+    #And I visit cart after product added to basket
+#    Then I click edit address button on checkout
+ #   And I enter "#Address_Address1" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir"
+  #  And I click on save on edit address on checkout
+    #And I click complete order button
+    Then I enter credit card information
+    |5101521710307762|12|23|326|
+    And I read and accept pre information form
+    And I read and accept distance purchase form
+
+
+
+
+
+
+
+
 

@@ -1,21 +1,18 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
-  Scenario: Register a new user
-    Given I visit the Deal homepage
-    And I navigate to login page
-    And I click create an account button
-    Then I should be redirected to "/register"
-    Then I enter "#FirstName" as "Register  First Name"
-    And I enter "#LastName" as "Register Last Name"
+ @log_out
+ Scenario: Register a new user
+    Given I visit the Yargici homepage
+    And I navigate to register user page
+    And I enter "#FirstName" as "Register Test First Name"
+    And I enter "#LastName" as "Register Test Last Name"
     And I generate email with date time
-    And I enter "#Phone" as "525554606 "
+    And I enter "#Phone" as "5375120880"
     And I enter "#Password" as "12345678"
     And I enter "#ConfirmPassword" as "12345678"
-    And I select date on option dropdown
-    And I select month on option dropdown
-    And I select year on option dropdown
-    And I click on register button
-    Then I should see account activation message
+    And I accept subscription letter
+    And I click sign up button
+
+
 
 

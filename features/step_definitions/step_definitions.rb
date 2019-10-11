@@ -1,179 +1,74 @@
 #encoding: UTF-8
-
-Given(/^I visit the Deal homepage$/) do
-  visit 'https://thedealoutlet.com/'
-  expect(page).to have_selector('.LinkMenuItem')
-  puts "Visiting Deal Outlet"
-  puts current_url
-end
-
-And(/^I visit the first product detail page$/) do
-  sleep 2
-  puts "Visiting product detail page"
-  products = all(".product-box-image-container")
-  products[0].click
-  sleep 2
-end
-
-And(/^I navigate to women category$/) do
-  begin
-    navigation_items = find(".MainMenu.main-menu.no-list.p-0.m-0.list-inline.text-center.w-100").all("li")
-    navigation_items[1].click
-  rescue
-    puts "Could not be redirected to category"
-  end
-end
-
-
-And(/^I click add to basket$/) do
-  find(".add-to-cart-button").click
-  sleep 2
-end
-
-Then(/^I should see error message "([^"]*)"$/) do |arg|
-  expect(find(".ajax-cart-error-text.text-center").text).to match(arg)
-  puts "Information box displayed"
-end
-
-And(/^I close information box$/) do
-  find(".modal.fade.show",match: :first).find(".close").click
-  puts "Closing information box"
-  sleep 2
-end
-
-And(/^I select size$/) do
-  find(".size-list-label:not(.attribute-value-out-of-stock)", match: :first).click
-end
-
-Then(/^I should see mini cart appears with product added$/) do
+#
+Given(/^I visit the Yargici homepage$/) do
+  visit 'https://www.yargici.com/'
   sleep 5
-  expect(page).to have_selector("#mini-cart")
 end
 
-When(/^I click on view full bag$/) do
-  find(".flyout-buttons.btn.btn-site-black.float-left").click
-  sleep 2
+And(/^I navigate to login page$/) do
+  all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
+  find(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2", match: :first).click
 end
 
-And(/^I should be redirected to "([^"]*)"$/) do |arg|
-  sleep 3
+Then(/^I should be redirected to "([^"]*)"$/) do |arg|
   expect(page.current_url).to include(arg)
-  puts "Visiting #{page.current_url}"
 end
-
-Then(/^I click on Confirm button on checkout$/) do
-  find("#checkout").click
-  puts "Clicking on Confirm button"
-end
-
-And(/^I click on Checkout as Guest$/) do
-  find(".btn.btn-outline-site-black.checkout-as-guest-button.w-100").click
-end
-
-Then(/^I enter mail address "([^"]*)"$/) do |arg|
-  find_by_id('customerEmail').set arg
-  find("#saveEmail").click
-  expect(page).to have_selector(".col-12.col-md-8.change-email-form.d-none")
-end
-
 
 And(/^I enter "([^"]*)" as "([^"]*)"$/) do |arg1, arg2|
   find(arg1).set arg2
 end
 
-And(/^I select UAE on dropdown$/) do
-  find("#countryName option[value='79']").select_option
+When(/^I click login button$/) do
+  find(".btn.btn-site-primary.rounded-0.w-100.mt-3.p-3.login-button").click
 end
 
-And(/^I select Dubai on dropdown$/) do
-  find("#cityName option[value='238']").select_option
+Then(/^I navigate to order history$/) do
+  visit 'https://www.yargici.com/order/history'
 end
 
-And(/^I enter delivery address "([^"]*)"$/) do |arg|
-  find("#addressLine").set arg
+And(/^I logout on my account$/) do
+  find(".no-list.m-0.p-0.customer-menu-list").all("li")[7].find("[href='/logout']").click
 end
 
-And(/^I should see "([^"]*)" part is disabled$/) do |arg|
-  expect(page).to have_selector(arg, visible: false)
+Then(/^I click on Giyim on navigation$/) do
+  sleep 2
+  tag = find(".MainMenu.main-menu.no-list.p-0.m-0.list-inline.text-center.position-relative.d-md-inline-block.active")
+  tag.all("li")[1].hover
+  tag.first("[href='/giyim']").click
 end
 
-And(/^I save address$/) do
-  find("#addNewAddress").click
-  puts "Address Saved"
+And(/^I visit first product detail page$/) do
+  first(".col-6.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.product-grid-item-container.p-0").click
+  sleep 2
+  $product_link = page.current_url
 end
 
-And(/^I enter credit card information$/) do |table|
-  table = table.raw[0]
-  # table is a table.hashes.keys # => [:1212 1212 1221 1212, :12, :21, :123]
-  sleep 20
- # find("input[data-checkout='card-number']").set table[0]
-  page.within_frame('cko-iframe-id') do
-    all(".input-control")[0].set(table[0])
-    all(".input-control")[1].set(table[1])
-    all(".input-control")[2].set(table[2])
-    sleep 5
-    all(".input-control")[3].click
-    all(".input-control")[3].set("123")
-  end
-
+And(/^I add product as favourite$/) do
+  sleep 5
+  find(:xpath, '//*[@id="product-details-form"]/div/div[1]/div/div[2]/div/ul/li[1]/span/span').click
+  sleep 5
 end
 
-Then(/^I click on place my order button$/) do
-  find(".payment-info-next-step-button").click
+And(/^I see product added to favourites information box$/) do
+ expect(find(".favorite-result-message").text).to include("İlgili ürün favori listenize eklenmiştir. Favori listeniz için ")
 end
 
-Then(/^I see navigation bar exists$/) do
-  expect(page).to have_selector(".MainMenu.main-menu.no-list.p-0.m-0.list-inline.text-center.w-100")
-  puts "Navigation bar found"
+And(/^I close information box$/) do
+  find(:xpath, '//*[@id="add-to-favorites-modal"]/div/div/div[1]/button/i').click
+  sleep 1
 end
 
-And(/^I see search bar exists$/) do
-  expect(page).to have_selector("#small-searchterms")
-  puts "Search bar found"
+And(/^I navigate to register user page$/) do
+  all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
+  all(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2")[1].click
 end
 
-And(/^I see breadcrumb exists$/) do
-  home_page_breadcrumb = find(".breadcrumb.m-0.rounded-0.bg-white").all(".breadcrumb-item")
-  expect(page).to have_link('Anasayfa', href:"/" )
+And(/^I accept subscription letter$/) do
+  find(:xpath, '//*[@id="register-form"]/div/div[10]/div/div[1]/div[2]/div/div[1]/div').first(".custom-check-label.m-0").click
 end
 
-And(/^I see product information box exists$/) do
-  expect(page).to have_content("PRODUCT INFORMATION")
-end
-
-And(/^I see add to favourites button exists$/) do
-  expect(page).to have_selector(".add-to-favourites.btn-cursor")
-end
-
-And(/^I see share button exists$/) do
-  expect(page).to have_selector(".fas.fa-share-alt")
-end
-
-And(/^I see footer bar exists$/) do
-  find(".footer-list-menu.list-inline.m-0.p-0.text-center").all(".d-block.d-md-inline-block")
-  expect(page).to have_selector(".footer-list-menu.list-inline.m-0.p-0.text-center")
-  puts "Found footer"
-end
-
-And(/^I see account items exists$/) do
-  expect(page).to have_selector(".customer-list-item")
-end
-
-And(/^I navigate to login page$/) do
- account = find(".user-action-list.user-action-list.d-inline-block.align-middle.m-0.p-0").find(".d-inline-block.align-middle.customer-list-item")
-  account.click
-end
-
-And(/^I click create an account button$/) do
-  find(:xpath, "/html/body/div[7]/div/div/div/div[1]/div/div/div/div/div[2]/a").click
-end
-
-And(/^I select date on option dropdown$/) do
-  find("select[name='DateOfBirthDay'] option[value='1']").select_option
-end
-
-And(/^I select month on option dropdown$/) do
-  find("select[name='DateOfBirthMonth'] option[value='1']").select_option
+And(/^I click sign up button$/) do
+  find("#register-button").click
 end
 
 And(/^I generate email with date time$/) do
@@ -182,327 +77,391 @@ And(/^I generate email with date time$/) do
   find("#Email").set time.year.to_s + time.month.to_s + time.day.to_s + time.usec.to_s + "@gmail.com"
 end
 
-And(/^I select year on option dropdown$/) do
-  find("select[name='DateOfBirthYear'] option[value='1994']").select_option
+
+Then(/^I check footer links under YARGICI$/) do |table|
+  # table is a table.hashes.keys # => [:Hikayemiz, :Kurumsal, :Kariyer, :Mağazalar]
+  table = table.raw[0]
+  links = all(".footer-list-menu")[0].all(".d-block")
+  expect(links[0].text).to eq(table[0])
+  expect(links[1].text).to eq(table[1])
+  expect(links[2].text).to eq(table[2])
+  expect(links[3].text).to eq(table[3])
 end
 
-And(/^I click on register button$/) do
-  find("#register-button").click
+
+And(/^I check footer links under YARDIM$/) do |table|
+  # table is a table.hashes.keys # => [:Site Haritası, :Gizlilik Politikası, :Sıkça Sorulan Sorular, :Bize Ulaşın]
+  table = table.raw[0]
+  links = all(".footer-list-menu")[1].all(".d-block")
+  expect(links[0].text).to eq(table[0])
+  expect(links[1].text).to eq(table[1])
+  expect(links[2].text).to eq(table[2])
+  expect(links[3].text).to eq(table[3])
 end
 
-Then(/^I should see account activation message$/) do
-  acc = find(".static-page-header.text-center").text
-  expect(acc).to match("Account Activations")
-  expect(page).to have_selector(".login-button.btn.btn-site-green.w-100")
+And(/^I check footer links under KATEGORİLER$/) do |table|
+  # table is a table.hashes.keys # => [:Elbise, :Ayakkabı, :Çanta, :Kazak, :Şal, :Homeworks]
+  table = table.raw[0]
+  links = all(".footer-list-menu")[2].all(".d-block")
+  expect(links[0].text).to eq(table[0])
+  expect(links[1].text).to eq(table[1])
+  expect(links[2].text).to eq(table[2])
+  expect(links[3].text).to eq(table[3])
+  expect(links[4].text).to eq(table[4])
+  expect(links[5].text).to eq(table[5])
+
 end
 
-And(/^I click login button$/) do
-  find(".login-button.btn.btn-site-green.w-100").click
+And(/^I check privacy agreement checkbox$/) do
+  find(".custom-check-label.m-0.text-secondary.email-perm-check").set true
 end
 
-And(/^I see transaction is aborted message$/) do
-  text = find("#checkout-confirm-order-load").text
-  sleep 10
-  expect(text).to include("The transaction has aborted.")
+When(/^I click on arrow on newsletter$/) do
+  find(".icon-ico_slide-lright.arrow-newsletter").click
+  sleep 3
 end
 
-  And(/^I click on "([^"]*)" filter combobox$/) do |arg|
-  find(".bg-white.filter-left-menu.common-mobile-menu").find(".filter-container.d-md-flex.justify-content-between.flex-nowrap").find(".filter-item."+arg).click
+Then(/^I should see message box with text "([^"]*)"$/) do |arg|
+  text = find("#subscribeModal").find(".modal-body").text
+  expect(text).to eq(arg)
 end
 
-And(/^I select dresses on combobox$/) do
-  list  = find(".bg-white.filter-left-menu.common-mobile-menu").find(".filter-container.d-md-flex.justify-content-between.flex-nowrap").find(".filter-item.cats").find('a[href="/c/dresses-26"]')
-  list.click
+And(/^I click on close button$/) do
+  find("#subscribeModal").find(".btn.btn-site-primary.rounded-0").click
 end
 
-And(/^I select size on combobox$/) do
-  find(".filter-item.size").find(".spec-list.p-0.m-0.no-list.size.scroll-class").all("li")[0].click
+And(/^I click on "([^"]*)" on footer$/) do |arg|
+  find("a", :text => arg, match: :first).click
 end
 
-Then(/^I should see selected filters$/) do
-  expect(page).to have_link("Remove Filter")
-  expect(page).to have_selector(".remove-filtered-spec.text-white.position-relative.d-block")
-  expect(page).to have_selector(".spec-box.text-spec.d-inline-block.ease.text-left.active.selected-spec")
+And(/^I click on forgot password button$/) do
+  find(".mt-2.d-inline-block").click
 end
 
-Then(/^I select color on combobox$/) do
-  find(".filter-item.color").find(".spec-list.p-0.m-0.no-list.color").all("li")[0].click
+And(/^I click on send password button$/) do
+  sleep 2
+  find(".password-recovery-button.btn.btn-site-primary.rounded-0.w-100.p-2.mt-2.mt-md-0").click
 end
 
-And(/^I select brand on combobox$/) do
-  find(".filter-item.brand").find(".spec-list.p-0.m-0.no-list.brand").all("li")[0].click
+And(/^I should see password change mail sent message$/) do
+  expect(find(".font-italic.rounded.p-2.mb-2.in-no-list.bg-success.text-white").text).to eq("Şifre değişiklik bilgileriniz e-posta adresinize gönderildi.")
 end
 
-And(/^I see products are listed$/) do
-  number_of_product = find(".product-counts-info-row.position-absolute.d-none.d-md-block", match: :first).text
-  number_of_product.split(" ")[0].to_i.should be > 0
+And(/^I navigate to addresses$/) do
+  find(".icon-ico_mini-member-on.align-middle.user-icon").hover
+  sleep 1
+  find("a[href='/customer/addresses']").click
 end
 
-And(/^I select price low to high$/) do
-  find(".filter-item.order-by", match: :first).find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[3].click
+And(/^I click on add new address button$/) do
+  find(".open-address-form.btn.btn-site-primary.rounded-0.float-right").click
 end
 
-Then(/^I should see products are sorted price low to high$/) do
-  prices = find(".container-fluid.product-list-container.p-0").all(".product-price-list.list-inline.text-left.p-0")
-  arr = []
-  prices.each{|x|
-    arr << x.find(".d-block.product-box-price").text.split(" ")[0]
-
-  }
-  puts arr
-  expect(arr).to eq(arr.sort)
+And(/^I select Turkey on dropdown$/) do
+  find("#Address_CountryId option[value='77']").select_option
 end
 
-And(/^I select price high to low$/) do
-  find(".filter-item.order-by", match: :first).find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[4].click
+And(/^I click on save address button$/) do
+  find(".btn.btn-site-primary.rounded-0.float-right").click
 end
+
+And(/^I select size variant$/) do
+  first(".size-list-label", visible: true).click
+end
+
+And(/^I add product to basket$/) do
+  find(".add-to-cart-button.btn.rounded-0.text-white.font-weight-bold.col-12").click
+  sleep 2
+
+end
+
+Then(/^I accept max stock product limit alert box$/) do
+  page.driver.browser.switch_to.alert.accept
+end
+
+And(/^I hover on cart$/) do
+  find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").hover
+
+end
+
+And(/^I delete basket items$/) do
+  find(".delete-shopping-cart-item-icon.border-0.text-site-primary.outline-0").find(".icon-ico_close").click
+end
+
+And(/^I accept delete basket items message box$/) do
+  find("#modal-btn-si").click
+end
+
+And(/^I visit cart after product added to basket$/) do
+  find(".btn-black.btn.w-100.go-to-cart.mt-2.mb-3.p-3.p-lg-0").click
+  sleep 2
+end
+
+And(/^I visit basket$/) do
+  find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").hover
+  find(".btn.btn-black.text-white.font-weight-bold.border-0.rounded.d-inline-block.bg-black.w-100.mt-2.mt-md-0").click
+  sleep 3
+end
+
+And(/^I click on checkout button$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find("#checkout").click
+  sleep 7
+end
+
+And(/^I select City Istanbul on dropdown$/) do
+  find("#Address_StateProvinceId option[value='74']").select_option
+end
+
+And(/^I select County Besiktas on dropdown$/) do
+  find("#Address_CountyId option[value='446']").select_option
+end
+
+Then(/^I click edit address button on checkout$/) do
+  find("#AddressEditButton").click
+  sleep 1
+end
+
+And(/^I click on save on edit address on checkout$/) do
+  find(".btn.btn-site-primary.rounded-0.loat-right").click
+end
+
+And(/^I click complete order button$/) do
+  find("#form-submit").click
+  sleep 2
+end
+
+Then(/^I enter credit card information$/) do |table|
+  # table is a table.hashes.keys # => [:5101521710307762, :12, :23, :326]
+  table = table.raw[0]
+  find("#CardNumber").set table[0]
+  find("#ExpireMonth option[value='#{table[1]}']").select_option
+  find("#ExpireYear option[value='#{table[2]}']").select_option
+  find("#CardCode").set table[3]
+  find(".installment-label.align-middle.mr-2").click
+end
+
+And(/^I read and accept pre information form$/) do
+  find(:xpath, '//*[@id="sticky-item"]/div[4]/div[1]/div[2]/label').click
+  sleep 1
+  find(:xpath, '//*[@id="sticky-item"]/div[4]/div[1]/div[3]/strong/span').click
+  sleep 3
+  expect(find("#ph-title").text).to eq("ÖN BİLGİLENDİRME FORMU")
+  find("#info-terms-data-modal").find(".icon-ico_close").click
+
+end
+
+And(/^I read and accept distance purchase form$/) do
+  find(:xpath, '//*[@id="sticky-item"]/div[4]/div[2]/div[2]/label').click
+  sleep 1
+  find(:xpath,'//*[@id="sticky-item"]/div[4]/div[2]/div[3]/strong/span/span' ).click
+  sleep 5
+  expect(find("#sales-terms-data-body").find("#ph-title").text).to eq("SATIŞ SÖZLEŞMESİ")
+  find("#sales-terms-data-modal").find(".icon-ico_close").click
+end
+
+And(/^I click on complete button between basket and cart$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(".register-button.btn.w-100.btn.rounded-0.p-3.font-weight-bold.btn-black.mobile-fixed-button.mt-md-3").click
+  sleep 4
+end
+
+And(/^I check size fit link$/) do
+  find("#sizeTableTrigger").click
+end
+
+And(/^I check product information$/) do
+  expect(page).to have_selector("#myTabContent")
+  expect(page).to have_selector("#tab-1")
+
+end
+
+And(/^I check breadcrumb$/) do
+  expect(page).to have_selector(".breadcrumb.m-0.rounded-0.bg-white")
+  expect(page).to have_selector(".mb-2.detail-md.btn-cursor.position-relative")
+end
+
+And(/^I check recommendation carousels$/) do
+  expect(page).to have_selector("#vl-alternative-product")
+  expect(page).to have_selector(".row.d-flex.justify-content-center")
+end
+
+And(/^I select price high to low sorting$/) do
+  find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
+  find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").all("option")[2].click
+
+end
+
 
 
 Then(/^I should see products are sorted price high to low$/) do
-  prices = find(".container-fluid.product-list-container.p-0").all(".product-price-list.list-inline.text-left.p-0")
+  products = all(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary")
   arr = []
-  prices.each{|x|
-    arr << x.find(".d-block.product-box-price").text.split(" ")[0]
+  products.each{|x|
+    arr << x.text.split(" ")[0]
 
   }
-
-  arr.sort { |a,b| b <=> a}
   puts arr
+  arr.sort { |a,b| b <=> a}
   expect(arr).to eq(arr)
 
-
 end
 
-Then(/^I click forgot password$/) do
-  find(".d-inline-block.text-site-light-gray").click
+When(/^I select price low to high sorting$/) do
+  find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
+  find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").all("option")[1].click
 end
 
-And(/^I click reset my password button$/) do
-  find(".btn.btn-site-green.w-100").click
+Then(/^I should see products are sorted price low to high$/) do
+  products = all(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary")
+  arr = []
+  products.each{|product|
+    arr.push(product.text.split(" ")[0].to_i)
+  }
+  expect(arr).to eq(arr.sort)
 end
 
-Then(/^I should see password recovery email is sent message$/) do
-  expect(find(".font-italic.rounded.p-2.mb-2.in-no-list.bg-success.text-white").text).to match("Your password change information has been sent to your e-mail address.")
-end
-
-When(/^I click on add to favorites button$/) do
-  find(".far.fa-heart").click
-end
-
-Then(/^I should see product is added to favorites$/) do
-  sleep 2
-  expect(find(".favorite-result-message").text).to include("Related product has been added to your favorite list. You can access your favorite list from the ")
-
-end
-
-And(/^I close favorite product added information box$/) do
-  sleep 2
-  find("#add-to-favorites-modal").find('span',  :text => "Close").click
-
-end
-
-Then(/^I should see "([^"]*)" on heart logo$/) do |arg|
-  sleep 2
-  expect(find(:xpath,"/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[2]/a/span").text).to match(arg)
-end
-
-And(/^I navigate to favorites page$/) do
-  visit 'https://thedealoutlet.com/customer/favouritesubscriptions'
-end
-
-Then(/^I should see favorite products is not empty$/) do
-  expect(page).to have_selector(".favourite-table")
-end
-
-
-When(/^I click on edit button$/) do
-  find(".add-to-cart-from-fav.bg-white.border-0").click
-  sleep 2
-  expect(page).to have_selector("#product-details-form")
-  sleep 2
-end
-
-And(/^I search for product "([^"]*)"$/) do |arg|
-  find("#small-searchterms").set(arg)
-  find("#search-submit").click
-  sleep 2
-  expect(page.current_url).to include(arg.gsub(' ', '+'))
-end
-
-And(/^I should see "([^"]*)" product is added to basket$/) do |arg|
-  product_name = all(".mini-cart-product-name")[1].text
-  expect(product_name).to match(arg)
-end
-
-Then(/^I check footer links$/) do |table|
-  # table is a table.hashes.keys # => [:PRIVACY & COOKIES POLICY]
-  table = table.raw[0]
-  sleep 2
-  footer = find(".footer-list-menu.list-inline.m-0.p-0.text-center").all("li")
-  expect(footer[0].text).to eq(table[0])
-  expect(footer[1].text).to eq(table[1])
-  expect(footer[2].text).to eq(table[2])
-  expect(footer[3].text).to eq(table[3])
-end
-
-When(/^I click on "([^"]*)" on footer$/) do |arg|
-  footer = find(".footer-list-menu.list-inline.m-0.p-0.text-center")
-  footer.find("a", :text => arg, match: :first).click
-end
-
-And(/^I click on my addresses button$/) do
-  find(".customer-menu.customer-menu-action.d-block.bg-white.border-0").hover
-    find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").all("li")[1].click
-end
-
-And(/^I click add new address button$/) do
-  find(".btn.btn-site-green.w-100.mt-md-5").click
-  sleep 2
-end
-
-And(/^I click save button$/) do
-  find(".btn.btn-site-green.w-100").click
-end
-
-When(/^I click on edit button for addresses$/) do
-  find(".btn-btn-site-black-w-100", match: :first).click
-end
-
-And(/^I logout$/) do
-  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").hover
-  acc = find(:xpath,"/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/div/ul/li[4]/a/span")
-  acc.click
-end
-
-Then(/^I delete address$/) do
-  find(".address-edit-button.d-none.d-md-block.bg-white.border-0.w-100.h-100", match: :first).click
+And(/^I search for "([^"]*)"$/) do |arg|
+  find("#small-searchterms").click
+  find(".outline-0.full-search-box.ui-autocomplete-input").set arg
+  find(".iconex-angle-right.align-middle.search-icon.btn-cursor").click
   sleep 1
-  page.driver.browser.switch_to.alert.accept
+
 end
 
-And(/^I click on promotion code$/) do
-  find("span[data-key-name='promotion.code']").click
+And(/^I click product on checkout$/) do
+  find(".img-responsive", match: :first).click
 end
 
-And(/^I enter promotion code as "([^"]*)"$/) do |arg|
-  find("input[name='discountcouponcode']", match: :first).set(arg)
+And(/^I should see visited product is added to basket$/) do
+  expect($product_link).to eq(page.current_url)
+  $product_link = nil
 end
 
-And(/^I click apply promotion code button$/) do
-  find("input[name='applydiscountcouponcode']", match: :first).click
+And(/^I apply size filter$/) do
+  page.driver.browser.manage.window.resize_to(1440,1100)
+  first(".spec-list.p-0.no-list.my-2").all(".spec-box.text-spec.d-inline-block.text-center.border")[0].click
+  sleep 1
+  find("#filterByPrice").click
 end
 
-And(/^I should see remove discount button$/) do
-  sleep 10
-  expect(page).to have_selector(".cb.remove-discount-button.btn.btn--ys")
+Then(/^I should see filter is applied$/) do
+  expect(page).to have_content("Filtreyi Kaldır")
 end
 
-And(/^I should see discount is applied$/) do
-  find(".order-small-price.order-total-value-column.text-right").text
+And(/^I remove applied filter$/) do
+  find(:xpath, '//*[@id="filters-item"]/div/div/div[1]/ul/li[1]/ul/li[2]/a/span').click
+  page.driver.browser.manage.window.resize_to(1440,900)
 end
 
+And(/^I close privacy policy message$/) do
+  sleep 5
+  page.within_frame('question-group-form') do
+    find(".fa.fa-times.element-close-button").click
+  end
+
+end
+
+And(/^I click edit address button on basket$/) do
+  first(".ml-2.align-middle").click
+  sleep 2
+end
+
+And(/^I select shipment and billing address checkboxes$/) do
+  find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label', match: :first).click
+  find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label', match: :first).click
+end
+
+And(/^I click on apply filter button$/) do
+  page.driver.browser.manage.window.resize_to(1440,1100)
+  sleep 1
+  find("#filterByPrice").click
+  $price_min = find_field("priceMin").value.to_i
+  $price_max = find_field("priceMax").value.to_i
+  sleep 2
+ # page.driver.browser.manage.window.resize_to(1440,900)
+
+end
+
+And(/^I click on Indirim on navigation$/) do
+  find(:xpath, '//*[@id="3303"]/a/span[1]').click
+end
+
+And(/^I should see product prices are in price filter interval$/) do
+  list = all(".product-box-container.p-2")
+  list.each{|li|
+    puts li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
+  }
+end
 
 And(/^I click on hamburger$/) do
-  find("#mobile-menu-toggler").click
+  find(".mobile-menu-icon-container.position-relative.bg-white.border-0.outline-0.d-block.d-md-none").click
 end
 
-And(/^I click dresses on menu$/) do
+And(/^I select size variant on mobile$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(:xpath, '//*[@id="product-details-form"]/div/div[1]/div/div[2]/div/div[2]/div[1]').click
+  find(".list-inline.m-0.p-0.no-list.option-list.options-swatch.options-swatch--size.options-swatch--lg.RadioList").first(".size-list-label").click
 
-  find("a[href='/c/dresses-26']").click
-  sleep 5
 end
 
-And(/^I click on filter$/) do
-  find(".toggle-filter-area.text-site-green.border-0.w-100.bg-white.p-2").click
-end
-
-And(/^I click on size$/) do
-  find(".filter-item.size").find(".spec-filter-head.btn-cursor").click
-end
-
-And(/^I select size on mobile$/) do
-  find(".spec-item-container", match: :first).click
-end
-
-And(/^I click on brand on mobile$/) do
-  find(".filter-item.brand").find(".spec-filter-head.btn-cursor").click
-end
-
-And(/^I select brand on mobile$/) do
-  find(".spec-list.p-0.m-0.no-list.brand").find(".spec-item-container", match: :first).click
-end
-
-And(/^I click on color filter on mobile$/) do
-  find(".filter-item.color").click
-end
-
-And(/^I select color on mobile$/) do
-  find(".spec-list.p-0.m-0.no-list.color").find(".spec-item-container", match: :first).click
-end
-
-And(/^I click on filter by price on mobile$/) do
-  find(".filter-item.price").find(".spec-filter-head.btn-cursor").click
-end
-
-And(/^I click on filter button$/) do
-  find(".desktop-filter-button.btn.btn-site-black.d-md-none").click
-end
-
-And(/^I click on sort$/) do
-  find(".toggle-sort-area.text-site-green.border-0.w-100.bg-white.p-2").click
-end
-
-
-And(/^I select price low to high on mobile$/) do
-  find(".mobile-sort-container.mt-2.sort-arrow.position-relative").find(".spec-list.sort-list.m-0.p-0.no-list").all("li")[3].click
-end
-
-And(/^I click on my account on mobile$/) do
-  find(:xpath, "/html/body/header/div[2]/div/div/div/div/div[2]/ul/li[3]/button/img").click
-end
-
-And(/^I click on my addresses button on mobile$/) do
-  find(".customer-menu.customer-logged-menu.no-list.m-0.p-0.border.rounded.arrow_box").all("li")[1].click
-end
-
-And(/^I click add new address button on mobile$/) do
-  find(".account-menu-header.text-white").click
-end
-
-Then(/^I delete address on mobile$/) do
-  find(".address-item.border-bottom.border-site-light-gray", match: :first).find(".btn.btn-outline-site-black.d-block.d-md-none.w-100").click
-  page.driver.browser.switch_to.alert.accept
-end
-
-And(/^I visit the first product detail page on mobile$/) do
-  find(".product-grid-item-container", match: :first).click
-end
-
-And(/^I click add to basket on mobile$/) do
-  find(".mobile-add-to-cart-from-fav.btn.btn-site-black").click
+And(/^I add product to basket on mobile$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(".add-to-cart-button.btn.rounded-0.text-white.font-weight-bold.col-12").click
   sleep 1
-  find(".size-list-label", match: :first).click
 end
 
-Then(/^I should see mini cart appears with product added on mobile$/) do
-  expect(page).to have_selector("#mini-cart")
-end
-
-Then(/^I navigate to my addresses$/) do
-  visit 'https://thedealoutlet.com/customer/addresses'
-
-end
-
-  And(/^I edit first address$/) do
-  find(".col-12.col-md-2", match: :first).first(".btn-btn-site-black-w-100").click
-end
-
-And(/^I logout on my account$/) do
+And(/^I close information box on mobile$/) do
   sleep 2
-  find(".account-menu-list.no-list.m-0.p-0").all("li")[6].click
+  page.execute_script('$(".sp-advanced-css-345").remove()')
 end
 
-And(/^I logout on my account on mobile$/) do
-  find(".account-menu-header.text-white").click
-  all("[href='/logout']")[1].click
+And(/^I delete basket items on mobile$/) do
+  find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").click
+  sleep 2
+  find(".btn-cursor.text-site-primary",match: :first).find(".icon-ico_close").click
+end
+
+
+And(/^I apply size filter on mobile$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(".toggle-filter-area.d-none.text-white.text-lg-center.rounded-circle.bg-site-primary.p-2.border-0").click
+  sleep 1
+  find(".spec-list.p-0.no-list.my-2",match: :first).all(".spec-box.text-spec.d-inline-block.text-center.border")[0].click
+  find("#filterByPrice").click
+end
+
+And(/^I click on filter button on mobile$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(".toggle-filter-area.d-none.text-white.text-lg-center.rounded-circle.bg-site-primary.p-2.border-0").click
+end
+
+And(/^I click on apply filter button on mobile$/) do
+  find("#filterByPrice").click
+  $price_min = find_field("priceMin").value.to_i
+  $price_max = find_field("priceMax").value.to_i
+end
+
+And(/^I should see product prices are in price filter interval on mobile$/) do
+  list = find(".container-fluid.product-list-container").all(".col-6.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.product-grid-item-container.p-0")
+  list.each{|li|
+    puts li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
+  }
+end
+
+And(/^I navigate to login page on mobile$/) do
+  find(".icon-ico_mini-member-on.align-middle.user-icon").click
+end
+
+And(/^I navigate to addresses on mobile$/) do
+  find(".icon-ico_mini-member-on.align-middle.user-icon").click
+  find(".customer-menu").all("li")[1].click
+end
+
+And(/^I visit basket on mobile$/) do
+  find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").click
 end
