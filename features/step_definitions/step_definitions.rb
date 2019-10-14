@@ -136,7 +136,7 @@ And(/^I click on "([^"]*)" on footer$/) do |arg|
 end
 
 And(/^I click on forgot password button$/) do
-  find(".mt-2.d-inline-block").click
+  find(".mt-2.d-inline-block", match: :first).click
 end
 
 And(/^I click on send password button$/) do
@@ -370,6 +370,7 @@ And(/^I click edit address button on basket$/) do
 end
 
 And(/^I select shipment and billing address checkboxes$/) do
+  sleep 1
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label', match: :first).click
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label', match: :first).click
 end
