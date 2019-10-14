@@ -341,7 +341,7 @@ And(/^I should see visited product is added to basket$/) do
 end
 
 And(/^I apply size filter$/) do
-  page.driver.browser.manage.window.resize_to(1440,1100)
+  page.execute_script('$(".sp-advanced-css-345").remove()')
   first(".spec-list.p-0.no-list.my-2").all(".spec-box.text-spec.d-inline-block.text-center.border")[0].click
   sleep 1
   find("#filterByPrice").click
@@ -375,7 +375,7 @@ And(/^I select shipment and billing address checkboxes$/) do
 end
 
 And(/^I click on apply filter button$/) do
-  page.driver.browser.manage.window.resize_to(1440,1100)
+  page.execute_script('$(".sp-advanced-css-345").remove()')
   sleep 1
   find("#filterByPrice").click
   $price_min = find_field("priceMin").value.to_i
