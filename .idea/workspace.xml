@@ -3,8 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb50f74-9048-494c-a089-e4df3c3d127a" name="Default" comment="Moved feature files from features folder to project folder. Added 2 files written at the event of 28.04.2015">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/Filter.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/Filter.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cucumber_failures.log" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_failures.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process10.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process7.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/process9.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
