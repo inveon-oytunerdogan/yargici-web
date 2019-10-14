@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-   @mobile @log_out
+   @mobile @log_out_mobile
    Scenario: Login on home page on mobile
      Given I visit the Yargici homepage
      And I navigate to login page on mobile

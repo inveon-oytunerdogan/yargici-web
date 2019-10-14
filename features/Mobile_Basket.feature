@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
    @mobile
-   Scenario: Login page through favourites button on mobile
+   Scenario: Check product is same as added on basket on mobile
     Given I visit the Yargici homepage
      And I close information box on mobile
     And I click on hamburger

@@ -2,7 +2,7 @@
 #
 Given(/^I visit the Yargici homepage$/) do
   visit 'https://www.yargici.com/'
-  sleep 5
+  sleep 6
 end
 
 And(/^I navigate to login page$/) do
@@ -11,6 +11,7 @@ And(/^I navigate to login page$/) do
 end
 
 Then(/^I should be redirected to "([^"]*)"$/) do |arg|
+  sleep 2
   expect(page.current_url).to include(arg)
 end
 
@@ -282,8 +283,8 @@ And(/^I check breadcrumb$/) do
 end
 
 And(/^I check recommendation carousels$/) do
+  sleep 2
   expect(page).to have_selector("#vl-alternative-product")
-  expect(page).to have_selector(".row.d-flex.justify-content-center")
 end
 
 And(/^I select price high to low sorting$/) do
@@ -322,6 +323,7 @@ Then(/^I should see products are sorted price low to high$/) do
 end
 
 And(/^I search for "([^"]*)"$/) do |arg|
+
   find("#small-searchterms").click
   find(".outline-0.full-search-box.ui-autocomplete-input").set arg
   find(".iconex-angle-right.align-middle.search-icon.btn-cursor").click
@@ -464,4 +466,25 @@ end
 
 And(/^I visit basket on mobile$/) do
   find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").click
+end
+
+And(/^I search for "([^"]*)" on mobile$/) do |arg|
+  find(".outline-0.full-mobile-search-box.ui-autocomplete-input").click
+  find(".outline-0.full-mobile-search-box.ui-autocomplete-input").set arg
+  sleep 1
+  find(".iconex-angle-right.align-middle.search-mobile-icon.btn-cursor").click
+
+
+end
+
+And(/^I click on size button on mobile$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(:xpath, '//*[@id="product-details-form"]/div/div[1]/div/div[2]/div/div[2]/div[1]').click
+end
+
+And(/^I navigate to register user page on mobile$/) do
+  find(:xpath, '/html/body/header/div[1]/div[1]/div/div/div/div[2]/div/ul/li[2]/a/i').click
+  sleep 1
+  find(:xpath, "/html/body/div[9]/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
+  sleep 1
 end

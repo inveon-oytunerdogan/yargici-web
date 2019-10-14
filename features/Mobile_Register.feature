@@ -1,9 +1,9 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
- @log_out @mobile
+ @log_out_mobile @mobile
  Scenario: Register a new user
     Given I visit the Yargici homepage
-    And I navigate to register user page
+    And I navigate to register user page on mobile
     And I enter "#FirstName" as "Register Test First Name"
     And I enter "#LastName" as "Register Test Last Name"
     And I generate email with date time
