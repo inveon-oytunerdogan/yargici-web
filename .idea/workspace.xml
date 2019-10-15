@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bb50f74-9048-494c-a089-e4df3c3d127a" name="Default" comment="Moved feature files from features folder to project folder. Added 2 files written at the event of 28.04.2015">
-      <change afterPath="$PROJECT_DIR$/features/Mobile_PromotionCode.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/features/PromotionCode.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cucumber_failures.log" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_failures.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber.Scenario: Login on home page (3)">
+  <component name="RunManager" selected="Cucumber.Scenario: Order complete through product details and cart">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -480,7 +477,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Scenario: Requesting new password" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Scenario: Order complete through product details and cart" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -503,9 +500,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_ForgotPassword.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/OrderComplete.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Requesting new password$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -622,11 +619,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart" />
         <item itemvalue="Cucumber.Scenario: Login on home page (3)" />
         <item itemvalue="Cucumber.Scenario: Login on home page (2)" />
         <item itemvalue="Cucumber.Scenario: Login on home page (1)" />
         <item itemvalue="Cucumber.Scenario: Login on home page" />
-        <item itemvalue="Cucumber.Scenario: Requesting new password" />
       </list>
     </recent_temporary>
   </component>
@@ -819,7 +816,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_product_to_basket_and_verify__1_.rcov" NAME="Scenario: Add product to basket and verify (1) Coverage Results" MODIFIED="1567584913032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Sorting_products_by.rcov" NAME="Scenario: Sorting products by Coverage Results" MODIFIED="1568637669794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@AddToFavourites_feature.rcov" NAME="AddToFavourites.feature Coverage Results" MODIFIED="1570450331581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Order_complete_through_product_details_and_cart.rcov" NAME="Scenario: Order complete through product details and cart Coverage Results" MODIFIED="1570991653915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Order_complete_through_product_details_and_cart.rcov" NAME="Scenario: Order complete through product details and cart Coverage Results" MODIFIED="1571138795691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Visiting_category_pages_and_applying_filter_options__2_.rcov" NAME="Scenario: Visiting category pages and applying filter options (2) Coverage Results" MODIFIED="1570716333601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Login_a_user__1_.rcov" NAME="Scenario: Login a user (1) Coverage Results" MODIFIED="1567603553261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Checking_my_account_features_on_desktop__1_.rcov" NAME="Scenario: Checking my account features on desktop (1) Coverage Results" MODIFIED="1568875098479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
