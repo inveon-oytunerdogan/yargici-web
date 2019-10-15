@@ -6,6 +6,7 @@ Given(/^I visit the Yargici homepage$/) do
 end
 
 And(/^I navigate to login page$/) do
+  sleep 1
   all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
   find(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2", match: :first).click
 end
@@ -136,6 +137,7 @@ And(/^I click on "([^"]*)" on footer$/) do |arg|
 end
 
 And(/^I click on forgot password button$/) do
+  sleep 1
   find(".mt-2.d-inline-block", match: :first).click
 end
 
@@ -488,4 +490,23 @@ And(/^I navigate to register user page on mobile$/) do
   sleep 1
   find(:xpath, "/html/body/div[9]/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
   sleep 1
+end
+
+When(/^I enter promotion code as "([^"]*)"$/) do |arg|
+  find(".custom-check-label.m-0.text-secondary.discountbox-check").click
+  find("#txtCouponCode").set arg
+  find(:xpath, '//*[@id="bodyDiscountBox"]/div[3]/div[2]/input').click
+  sleep 2
+end
+
+And(/^I should see discount applied message$/) do
+  txt = find(".text-white.text-center.p-2.rounded.coupon-code-result.bg-success").text
+  expect(txt).to match("İndirim kodu uygulandı.")
+  expect(page).to have_selector(:xpath,'//*[@id="bodyCartTotals"]/table/tbody/tr[3]/td[1]/button/i')
+  expect(page).to have_selector(:xpath,'//*[@id="bodyDiscountBox"]/div[4]/div/ul/li/small/div/button/i')
+  expect(find(:xpath, '//*[@id="bodyCartTotals"]/table/tbody/tr[3]/td[3]').text).to include("40")
+end
+
+And(/^I cancel promotion code$/) do
+  find(:xpath,'//*[@id="bodyCartTotals"]/table/tbody/tr[3]/td[1]/button/i').click
 end
