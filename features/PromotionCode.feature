@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
    @log_out @desktop @clear_basket
-   Scenario: Login on home page
+   Scenario: Apply promotion code
      Given I visit the Yargici homepage
      And I navigate to login page
      Then I should be redirected to "/login"
