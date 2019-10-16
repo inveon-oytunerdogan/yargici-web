@@ -115,7 +115,7 @@ And(/^I check footer links under KATEGORİLER$/) do |table|
 end
 
 And(/^I check privacy agreement checkbox$/) do
-  find(".custom-check-label.m-0.text-secondary.email-perm-check").set true
+  find(:xpath, '/html/body/footer/div[2]/div/div[1]/div/div/div/div[4]/div/div[3]/div/label').click
 end
 
 When(/^I click on arrow on newsletter$/) do
@@ -359,10 +359,8 @@ And(/^I remove applied filter$/) do
 end
 
 And(/^I close privacy policy message$/) do
-  sleep 5
-  page.within_frame('question-group-form') do
-    find(".fa.fa-times.element-close-button").click
-  end
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+
 
 end
 
@@ -372,7 +370,7 @@ And(/^I click edit address button on basket$/) do
 end
 
 And(/^I select shipment and billing address checkboxes$/) do
-  sleep 1
+  sleep 2
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label', match: :first).click
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label', match: :first).click
 end
@@ -509,4 +507,18 @@ end
 
 And(/^I cancel promotion code$/) do
   find(:xpath,'//*[@id="bodyCartTotals"]/table/tbody/tr[3]/td[1]/button/i').click
+end
+
+And(/^I click on Yargıcı on footer$/) do
+  find(:xpath, '/html/body/footer/div[2]/div/div[1]/div/div/div/div[1]/div/div').click
+end
+
+And(/^I click on Yardım on footer$/) do
+  find(:xpath, '/html/body/footer/div[2]/div/div[1]/div/div/div/div[2]/div/div').click
+end
+
+And(/^I click on Kategoriler on footer$/) do
+  find(:xpath,'/html/body/footer/div[2]/div/div[1]/div/div/div/div[3]/div/div').click
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+
 end
