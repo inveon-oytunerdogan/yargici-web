@@ -24,5 +24,6 @@ end
 end
 
 task :test => [ :cleanup, :parallel_run, :rerun  ]
+task :default => :test
 
 Rake::Task["test"].invoke
