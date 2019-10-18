@@ -458,7 +458,7 @@ end
 
   And(/^I navigate to login page on mobile$/) do
   find(".icon-ico_mini-member-on.align-middle.user-icon").click
-    sleep 2
+    sleep 3
 end
 
 And(/^I navigate to addresses on mobile$/) do
