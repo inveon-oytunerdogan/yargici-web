@@ -1,8 +1,9 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-   @log_out_mobile @mobile @clear_basket_mobile
+  @mobile @log_out_mobile  @clear_basket_mobile
    Scenario: Apply promotion code on mobile
      Given I visit the Yargici homepage
+     And I close information box on mobile
      And I navigate to login page on mobile
      Then I enter "#Email" as "oytun.erdogan@inveon.com.tr"
      And I enter "#Password" as "12345678"
