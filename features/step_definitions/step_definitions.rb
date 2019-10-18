@@ -61,6 +61,7 @@ And(/^I close information box$/) do
 end
 
 And(/^I navigate to register user page$/) do
+  sleep 2
   all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
   all(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2")[1].click
 end
