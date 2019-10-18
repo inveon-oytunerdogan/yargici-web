@@ -456,8 +456,9 @@ And(/^I should see product prices are in price filter interval on mobile$/) do
   }
 end
 
-And(/^I navigate to login page on mobile$/) do
+  And(/^I navigate to login page on mobile$/) do
   find(".icon-ico_mini-member-on.align-middle.user-icon").click
+    sleep 2
 end
 
 And(/^I navigate to addresses on mobile$/) do

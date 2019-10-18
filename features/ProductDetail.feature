@@ -8,7 +8,7 @@ Feature: Visiting product details and checking page properties
     And I select size variant
     And I check product information
     And I check breadcrumb
-    And I check recommendation carousels
+    #And I check recommendation carousels
     And I check size fit link
 
 
