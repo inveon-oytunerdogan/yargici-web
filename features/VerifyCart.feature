@@ -9,5 +9,3 @@ Feature: Visiting product details and checking page properties
    And I visit basket
    And I click product on checkout
    And I should see visited product is added to basket
-
-

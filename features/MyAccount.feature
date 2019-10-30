@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
- @desktop @log_out
+ @desktop @log_out @delete_address
  Scenario:Adding new address on my account
   Given I visit the Yargici homepage
   And I navigate to login page
@@ -27,4 +27,13 @@ Feature: Visiting product details and checking page properties
   And I enter "#Address_Address1" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir"
   And I click on save address button
 
+
+  Scenario: Delete all addresses
+   Given I visit the Yargici homepage
+   And I navigate to login page
+   Then I should be redirected to "/login"
+   Then I enter "#Email" as "oytun.erdogan@inveon.com.tr"
+   And I enter "#Password" as "12345678"
+   When I click login button
+  Given I delete all adresses
 

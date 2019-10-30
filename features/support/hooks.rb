@@ -36,7 +36,7 @@ end
 
 
 Before('@mobile') do
-  page.driver.browser.manage.window.resize_to(375,667)
+  page.driver.browser.manage.window.resize_to(414,736)
 end
 
 Before('@desktop') do
@@ -64,4 +64,13 @@ After('@clear_basket_mobile') do
   sleep 2
   find(:xpath,'//*[@id="bodyCart"]/tr[1]/td/h5/span[2]/i').click
   find("#modal-btn-si").click
+end
+
+
+After('@delete_address') do
+  visit 'https://www.yargici.com/customer/addresses'
+  sleep 2
+  find(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first).click
+  page.driver.browser.switch_to.alert.accept
+
 end
