@@ -532,44 +532,41 @@ Given(/^I delete all adresses$/) do
     visit 'https://www.yargici.com/customer/addresses'
     sleep 1
     find(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first).click
-    find(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first).click
+    #find(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first).click
     page.driver.browser.switch_to.alert.accept
     sleep 5
     i = i+1
   end
 end
 
-=begin
-Given(/^I create users on hotic$/) do
-  i = 0
-  while i< 1000
-    visit 'https://www.hotic.com.tr'
-    find(:xpath, '//*[@id="header"]/div/div/div/div[3]/div/div/div/a[1]/img').click
-    find(:xpath, '//*[@id="header"]/div/div/div/div[3]/div/div/div/div/ul/li/ul/li/a').click
-    find(:xpath,'/html/body/div[6]/div/div/div[1]/ul/li[2]/a').click
-    sleep 1
-    find("#FirstName").set "test"
-    find("#LastName").set "test"
-    time = Time.new
-    mail =  time.year.to_s + time.month.to_s + time.day.to_s + time.usec.to_s + "@gmail.com"
-    find("#Email").set mail
-    find("select[name='DateOfBirthDay'] option[value='1']").select_option
-    find("select[name='DateOfBirthMonth'] option[value='1']").select_option
-    find("select[name='DateOfBirthYear'] option[value='1909']").select_option
-    find("#Password").set "12345678"
-    find("#ConfirmPassword").set "12345678"
-    find("#Phone").set "5555555555"
-    find(:xpath,'/html/body/div[6]/div/div/div[2]/form/div[1]/div/div/div[11]/div[2]/label').click
-    find(:xpath,'/html/body/div[6]/div/div/div[2]/form/div[1]/div/div/div[11]/div[1]/label').click
-    find("#register-button").click
-    CSV.open("user_email.csv", "a+") do |csv|
-      csv << [mail]
-      # ...
+
+
+Given(/^I get$/) do
+  visit 'https://www.drlinkcheck.com/account/login'
+  find('#email').set('oytunerdogan@gmail.com')
+  find('#password').set('12345678')
+  find('.btn.btn-primary.btn-block').click
+  sleep 2
+  find("#sidebar-project-dropdown").click
+  find(:xpath, '//*[@id="app"]/div/div[3]/div/div[3]/div[2]/div/a/div[2]/div').click
+  sleep 2
+  find(:xpath, '//*[@id="app"]/div/div[1]/div/div[1]/div/ul/li[2]/a').click
+
+  sleep 2
+
+  stat = true
+  while stat
+    a = all(".link-url")
+    a.each { |x| puts x.text }
+    puts " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    b = all(".small.link-details.url-container")
+    b.each{|x| puts x.text.split(" ")[2]}
+    puts " AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+
+    if page.has_xpath?('//*[@id="app"]/div/div[3]/div/div[2]/div[2]/div/div[3]/ul/li[2]/a')
+      find(:xpath, '//*[@id="app"]/div/div[3]/div/div[2]/div[2]/div/div[3]/ul/li[2]/a').click
+      sleep 2
     end
-    find(:xpath,'//*[@id="header"]/div/div/div/div[3]/div/div/div/a[1]/img').click
-    find(:xpath, '//*[@id="header"]/div/div/div/div[3]/div/div/div/div/ul/li/ul/li[9]/a').click
-    i = i+1
   end
 end
-
-=end

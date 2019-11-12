@@ -29,7 +29,8 @@ Feature: Visiting product details and checking page properties
     And I read and accept distance purchase form
 
 
-
+ Scenario: Get links of link checker you may delete this when you notice
+  Given I get
 
 
 
