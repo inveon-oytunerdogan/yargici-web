@@ -4,7 +4,6 @@
     <list default="true" id="3bb50f74-9048-494c-a089-e4df3c3d127a" name="Default" comment="Moved feature files from features folder to project folder. Added 2 files written at the event of 28.04.2015">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/Mobile_OrderComplete.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/Mobile_OrderComplete.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -655,7 +654,7 @@
       <workItem from="1571811516612" duration="25531000" />
       <workItem from="1572598436313" duration="2253000" />
       <workItem from="1572689805874" duration="865000" />
-      <workItem from="1573456490634" duration="2490000" />
+      <workItem from="1573456490634" duration="3891000" />
     </task>
     <task id="LOCAL-00001" summary="committing the feature file from event of 21.04.2015">
       <created>1429689406378</created>
