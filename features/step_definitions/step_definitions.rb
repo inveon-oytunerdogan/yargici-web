@@ -371,7 +371,7 @@ And(/^I click edit address button on basket$/) do
 end
 
 And(/^I select shipment and billing address checkboxes$/) do
-  sleep 2
+  sleep 2.5
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label', match: :first).click
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label', match: :first).click
 end
