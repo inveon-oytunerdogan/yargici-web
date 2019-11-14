@@ -231,13 +231,17 @@ And(/^I click on save on edit address on checkout$/) do
 end
 
 And(/^I click complete order button$/) do
+  page.execute_script('$(".sp-advanced-css-345").remove()')
   find("#form-submit").click
   sleep 2
 end
 
 Then(/^I enter credit card information$/) do |table|
+   page.execute_script('$(".sp-advanced-css-345").remove()')
+   puts "ENtering credit card number"
   # table is a table.hashes.keys # => [:5101521710307762, :12, :23, :326]
   table = table.raw[0]
+   find("#CardNumber").click
   find("#CardNumber").set table[0]
   find("#ExpireMonth option[value='#{table[1]}']").select_option
   find("#ExpireYear option[value='#{table[2]}']").select_option
@@ -469,6 +473,7 @@ end
 
 And(/^I visit basket on mobile$/) do
   find(".cart-item-count.text-white.position-absolute.rounded-circle.text-center").click
+  sleep 0.5
 end
 
 And(/^I search for "([^"]*)" on mobile$/) do |arg|
@@ -528,7 +533,7 @@ end
 
 Given(/^I delete all adresses$/) do
   i = 0
-  while i< 500
+  while page.has_css?(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first)
     visit 'https://www.yargici.com/customer/addresses'
     sleep 1
     find(".btn.bg-white.account-address-button.account-address-remove.border-bottom.w-100.text-left", match: :first).click

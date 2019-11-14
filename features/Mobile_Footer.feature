@@ -6,7 +6,7 @@ Feature: Visiting product details and checking page properties
     Then I check footer links under YARGICI
     |Hikayemiz|Kurumsal|Kariyer|Mağazalar|
     And I check footer links under YARDIM
-    |Site Haritası|Gizlilik Politikası|Sıkça Sorulan Sorular|Bize Ulaşın|
+    |Site Haritası|Gizlilik Politikası|Sıkça Sorulan Sorular|KVKK|Bize Ulaşın|
     And I check footer links under KATEGORİLER
     |Elbise|Ayakkabı|Çanta|Kazak|Şal|Homeworks|
     And I enter "#NewsletterEmail" as "serbest@mailinator.com"
