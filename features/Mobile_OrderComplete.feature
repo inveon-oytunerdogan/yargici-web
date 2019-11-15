@@ -1,6 +1,6 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
-
+#### Bu hesaptaki adresi silme eğer silinmişse uncomment yap çalıştır
    @mobile @clear_basket_mobile
    Scenario: Order complete through product details and cart on mobile
     Given I visit the Yargici homepage
@@ -30,7 +30,7 @@ Feature: Visiting product details and checking page properties
 #    Then I click edit address button on checkout
  #   And I enter "#Address_Address1" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir"
   #  And I click on save on edit address on checkout
-    And I click complete order button
+  #  And I click complete order button
     Then I enter credit card information
     |5101521710307762|12|23|326|
     And I read and accept pre information form

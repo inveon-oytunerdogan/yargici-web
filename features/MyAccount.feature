@@ -36,4 +36,3 @@ Feature: Visiting product details and checking page properties
    And I enter "#Password" as "12345678"
    When I click login button
   Given I delete all adresses
-

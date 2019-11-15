@@ -1,5 +1,5 @@
 #encoding: UTF-8
-#
+
 Given(/^I visit the Yargici homepage$/) do
   visit 'https://www.yargici.com/'
   sleep 6
@@ -232,11 +232,12 @@ end
 
 And(/^I click complete order button$/) do
   page.execute_script('$(".sp-advanced-css-345").remove()')
-  find("#form-submit").click
+  find(:xpath, '//*[@id="form-submit"]/span').click
   sleep 2
 end
 
 Then(/^I enter credit card information$/) do |table|
+  sleep 2
    page.execute_script('$(".sp-advanced-css-345").remove()')
    puts "ENtering credit card number"
   # table is a table.hashes.keys # => [:5101521710307762, :12, :23, :326]
@@ -574,4 +575,8 @@ Given(/^I get$/) do
       sleep 2
     end
   end
+end
+
+Given(/^I visit$/) do
+  visit ''
 end
