@@ -6,7 +6,7 @@ Given(/^I visit the Yargici homepage$/) do
 end
 
 And(/^I navigate to login page$/) do
-  sleep 1
+  sleep 1.5
   all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
   find(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2", match: :first).click
 end
@@ -61,7 +61,7 @@ And(/^I close information box$/) do
 end
 
 And(/^I navigate to register user page$/) do
-  sleep 2
+  sleep 2.5
   all(".d-inline-block.align-middle.customer-list-item.mr-md-1")[1].hover
   all(".guest-menu-link.bg-white.with-login.d-block.p-3.text-dark.text-center.font-weight-bold.p-2")[1].click
 end
