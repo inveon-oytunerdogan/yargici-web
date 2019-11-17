@@ -18,3 +18,4 @@ gem "yard-cucumber"
 gem "redcarpet"
 gem "rubocop"
 gem 'capybara-click_at'
+gem 'capybara-screenshot'

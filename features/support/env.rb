@@ -5,7 +5,7 @@ require 'selenium-webdriver'
 require 'capybara'
 require 'capybara/dsl'
 require 'rest-client'
-
+require 'capybara-screenshot/cucumber'
 
 Capybara.save_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
 Capybara.register_driver :selenium do |app|
@@ -14,7 +14,8 @@ end
 
 
 Capybara.javascript_driver = :chrome
-
+Capybara::Screenshot.autosave_on_failure = true
+Capybara.save_path = "Screenshots"
 
 Capybara.configure do |config|
   config.default_max_wait_time = 10 # seconds
