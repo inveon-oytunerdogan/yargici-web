@@ -209,8 +209,9 @@ end
 
 And(/^I click on checkout button$/) do
   page.execute_script('$(".sp-advanced-css-345").remove()')
+  sleep 0.5
   find("#checkout").click
-  sleep 7
+  sleep 3
 end
 
 And(/^I select City Istanbul on dropdown$/) do
@@ -237,7 +238,7 @@ And(/^I click complete order button$/) do
 end
 
 Then(/^I enter credit card information$/) do |table|
-  sleep 2
+  sleep 4
    page.execute_script('$(".sp-advanced-css-345").remove()')
    puts "ENtering credit card number"
   # table is a table.hashes.keys # => [:5101521710307762, :12, :23, :326]
@@ -579,4 +580,9 @@ end
 
 Given(/^I visit$/) do
   visit ''
+end
+
+And(/^I select shipment and billing address checkboxes on mobile$/) do
+  find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label').click
+  find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label').click
 end

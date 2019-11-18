@@ -1,0 +1,722 @@
+[
+  {
+    "uri": "features/Mobile_MyAccount.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;adding-new-address-on-my-account-on-mobile",
+        "keyword": "Scenario",
+        "name": "Adding new address on my account on mobile",
+        "description": "",
+        "line": 5,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 4
+          },
+          {
+            "name": "@log_out_mobile",
+            "line": 4
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40097
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10067908526
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42154513322
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I navigate to login page on mobile",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:465"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8267053340
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/login\"",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2090073140
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I enter \"#Email\" as \"oytun.erdogan@inveon.com.tr\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1751215231
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Password\" as \"12345678\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2108512379
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click login button",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17189666624
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/?login=1\"",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2078400438
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I navigate to addresses on mobile",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:470"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21807172952
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on add new address button",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:160"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16516520263
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_FirstName\" as \"Oytun\"",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 412335219
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_LastName\" as \"Erdoğan\"",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 187636097
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_Email\" as \"oytun.erdogan@inveon.com.tr\"",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3048500803
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Phone\" as \"5375120880\"",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3864279590
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select Turkey on dropdown",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:164"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 362925048
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select City Istanbul on dropdown",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:216"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 604147518
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select County Besiktas on dropdown",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:220"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1198161423
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_Address1\" as \"5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul\"",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2140809579
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_ZipPostalCode\" as \"34335\"",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 279862623
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on save address button",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:168"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11368697913
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click edit address button on basket",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:373"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9481113530
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select Turkey on dropdown",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:164"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57413016
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Address_Address1\" as \"5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir\"",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1014712837
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on save address button",
+            "line": 28,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:168"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12651841251
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11997397842
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42153
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34442
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/Mobile_Register.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;register-a-new-user",
+        "keyword": "Scenario",
+        "name": "Register a new user",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@log_out_mobile",
+            "line": 3
+          },
+          {
+            "name": "@mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35470
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 156323318
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11058898642
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I navigate to register user page on mobile",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:494"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10364432264
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#FirstName\" as \"Register Test First Name\"",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 934668957
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#LastName\" as \"Register Test Last Name\"",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 455078578
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I generate email with date time",
+            "line": 9,
+            "output": [
+              "434394"
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:77"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 343080890
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Phone\" as \"5375120880\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 764360194
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#Password\" as \"12345678\"",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 206588365
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#ConfirmPassword\" as \"12345678\"",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 241383369
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I accept subscription letter",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 291238200
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click sign up button",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7507509865
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10434407816
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34956
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27760
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/VerifyCart.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;add-product-to-basket-and-verify-cart",
+        "keyword": "Scenario",
+        "name": "Add product to basket and verify cart",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@desktop",
+            "line": 3
+          },
+          {
+            "name": "@clear_basket",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85334
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138729188
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8502019217
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I search for \"sırt çantası\"",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:333"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3548015019
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit first product detail page",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6208041092
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I add product to basket",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:176"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2235440866
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit basket",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:204"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11287352440
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click product on checkout",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:342"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3670615141
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I should see visited product is added to basket",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:346"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12743483
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6927853071
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25189
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17478
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

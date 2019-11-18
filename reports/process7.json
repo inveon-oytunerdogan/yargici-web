@@ -1,0 +1,718 @@
+[
+  {
+    "uri": "features/Mobile_Basket.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;check-product-is-same-as-added-on-basket-on-mobile",
+        "keyword": "Scenario",
+        "name": "Check product is same as added on basket on mobile",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36498
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6517691800
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41331129569
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I close information box on mobile",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:425"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2038654033
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 198271431
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I click on Giyim on navigation",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11760298112
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit first product detail page",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8666074987
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select size variant on mobile",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:412"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 758452646
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I add product to basket on mobile",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:419"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1689181353
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I hover on cart",
+            "line": 14,
+            "comments": [
+              {
+                "value": "#When I add product to basket",
+                "line": 12
+              },
+              {
+                "value": "#Then I accept max stock product limit alert box",
+                "line": 13
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:186"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 388322055
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I delete basket items on mobile",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:430"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17441899689
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I accept delete basket items message box",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:195"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 316085165
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1728775
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33414
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/Mobile_Filter.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;visiting-category-pages-and-applying-filter-options-on-mobile",
+        "keyword": "Scenario",
+        "name": "Visiting category pages and applying filter options on mobile",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26731
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131318022
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21788763528
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 7,
+            "comments": [
+              {
+                "value": "#And I close information box on mobile",
+                "line": 6
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 990007238
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on Giyim on navigation",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10179832191
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I apply size filter on mobile",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:437"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15907022950
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see filter is applied",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:358"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 184858644
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on filter button on mobile",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:445"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 329585340
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I remove applied filter",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:362"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7479531776
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33414
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34956
+            }
+          }
+        ]
+      },
+      {
+        "id": "visiting-product-details-and-checking-page-properties;checking-price-range-filter-and-products-listed-on-mobile",
+        "keyword": "Scenario",
+        "name": "Checking price range filter and products listed on mobile",
+        "description": "",
+        "line": 15,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 14
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31872
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 623043241
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11399446257
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 818711998
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on Giyim on navigation",
+            "line": 18,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10889577897
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on filter button on mobile",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:445"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 225781213
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#priceMin\" as \"68.00\"",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 363723380
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#priceMax\" as \"1799.00\"",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 528400130
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on apply filter button on mobile",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:450"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8205055446
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I should see product prices are in price filter interval on mobile",
+            "line": 23,
+            "output": [
+              "449,99",
+              "429,99",
+              "599,99",
+              "479,99",
+              "429,99",
+              "399,99",
+              "429,99",
+              "599,99",
+              "449,99",
+              "479,99",
+              "349,99",
+              "599,99",
+              "479,99",
+              "479,99",
+              "479,99",
+              "349,99",
+              "479,99",
+              "449,99",
+              "399,99",
+              "479,99",
+              "249,99",
+              "229,99",
+              "429,99",
+              "469,99",
+              "279,99",
+              "499,99",
+              "199,99",
+              "479,99",
+              "399,99",
+              "299,99",
+              "399,99",
+              "429,99",
+              "589,99",
+              "349,99",
+              "399,99",
+              "369,99"
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:456"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7863884793
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80707
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26731
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/Mobile_ProductDetail.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;checking-product-detail-items-on-mobile",
+        "keyword": "Scenario",
+        "name": "Checking product detail items on mobile",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30844
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 120275556
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12079172552
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 217308005
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I click on Giyim on navigation",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12680339051
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit first product detail page",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6439251265
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I select size variant on mobile",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:412"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 641439813
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on size button on mobile",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:489"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 426149484
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check size fit link",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:278"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1720361506
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check product information",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:282"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 385023348
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check breadcrumb",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:288"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103418584
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56032
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 58602
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -16,8 +16,12 @@ Feature: Visiting product details and checking page properties
     And I add product to basket on mobile
     And I visit basket on mobile
     And I click on checkout button
-   # And I select shipment and billing address checkboxes
+    And I select shipment and billing address checkboxes on mobile
     And I click on complete button between basket and cart
+    Then I enter credit card information
+     |5101521710307762|12|23|326|
+    And I read and accept pre information form
+    And I read and accept distance purchase form
     #And I enter "#Address_FirstName" as "TEST"
     #And I enter "#Address_LastName" as "Test"
     #And I enter "#Phone" as "5375120880"
@@ -31,10 +35,7 @@ Feature: Visiting product details and checking page properties
  #   And I enter "#Address_Address1" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir"
   #  And I click on save on edit address on checkout
   #  And I click complete order button
-    Then I enter credit card information
-    |5101521710307762|12|23|326|
-    And I read and accept pre information form
-    And I read and accept distance purchase form
+
 
 
 

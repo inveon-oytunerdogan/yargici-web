@@ -1,0 +1,422 @@
+[
+  {
+    "uri": "features/Mobile_Sorting.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;visiting-category-pages-and-and-applying-sortings-price-high-to-low-on-mobile",
+        "keyword": "Scenario",
+        "name": "Visiting category pages and and applying sortings price high to low on mobile",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35470
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8280698481
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44197012504
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 210682832
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I click on Giyim on navigation",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9613990689
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I select price high to low sorting",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:298"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7523487797
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see products are sorted price high to low",
+            "line": 9,
+            "output": [
+              "[\"1799,99\", \"1699,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1499,99\", \"1399,99\", \"1399,99\", \"1399,99\", \"1399,99\", \"1399,99\", \"1399,99\", \"1299,99\", \"1299,99\", \"1299,99\", \"1299,99\", \"1299,99\", \"1299,99\", \"1199,99\", \"1199,99\", \"1199,99\", \"1199,99\", \"1199,99\", \"949,99\", \"949,99\", \"899,99\", \"899,99\", \"899,99\", \"899,99\", \"899,99\"]"
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:306"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 994180870
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32386
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38040
+            }
+          }
+        ]
+      },
+      {
+        "id": "visiting-product-details-and-checking-page-properties;visiting-category-pages-and-and-applying-sortings-price-low-to-high-on-mobile",
+        "keyword": "Scenario",
+        "name": "Visiting category pages and and applying sortings price low to high on mobile",
+        "description": "",
+        "line": 12,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 11
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38040
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123012397
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9765619634
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 551750673
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I click on Giyim on navigation",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10987800390
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I select price low to high sorting",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:319"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15714256046
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see products are sorted price low to high",
+            "line": 17,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:324"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 784872627
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29816
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22618
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/Mobile_VerifyCart.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;add-product-to-basket-and-verify-cart",
+        "keyword": "Scenario",
+        "name": "Add product to basket and verify cart",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@mobile",
+            "line": 3
+          },
+          {
+            "name": "@clear_basket_mobile",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32900
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 118297462
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13656948411
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on hamburger",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:408"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 905820055
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I search for \"sırt çantası\" on mobile",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:480"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14923072337
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit first product detail page",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10171503433
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I add product to basket on mobile",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:419"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1945428179
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I visit basket on mobile",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:475"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13339020351
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click product on checkout",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:342"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7315742289
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I should see visited product is added to basket",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:346"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63696340
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9235330858
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53976
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27245
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,597 @@
+[
+  {
+    "uri": "features/Footer.feature",
+    "id": "visiting-product-details-and-checking-page-properties",
+    "keyword": "Feature",
+    "name": "Visiting product details and checking page properties",
+    "description": "  Make sure Cucumber and Capybara are wired up properly",
+    "line": 1,
+    "elements": [
+      {
+        "id": "visiting-product-details-and-checking-page-properties;checking-footer-links",
+        "keyword": "Scenario",
+        "name": "Checking footer links",
+        "description": "",
+        "line": 4,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@desktop",
+            "line": 3
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41124
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5435719177
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45768523545
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I check footer links under YARGICI",
+            "line": 6,
+            "rows": [
+              {
+                "cells": [
+                  "Hikayemiz",
+                  "Kurumsal",
+                  "Kariyer",
+                  "Mağazalar"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:84"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 230069480
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check footer links under YARDIM",
+            "line": 8,
+            "rows": [
+              {
+                "cells": [
+                  "Site Haritası",
+                  "Gizlilik Politikası",
+                  "Sıkça Sorulan Sorular",
+                  "KVKK",
+                  "Bize Ulaşın"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 176564328
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check footer links under KATEGORİLER",
+            "line": 10,
+            "rows": [
+              {
+                "cells": [
+                  "Elbise",
+                  "Ayakkabı",
+                  "Çanta",
+                  "Kazak",
+                  "Şal",
+                  "Homeworks"
+                ]
+              }
+            ],
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:105"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 185654920
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I enter \"#NewsletterEmail\" as \"serbest@mailinator.com\"",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 445510428
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check privacy agreement checkbox",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:118"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 203801660
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on arrow on newsletter",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:122"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3165013458
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see message box with text \"Kaydolduğunuz İçin Teşekkür Ederiz\"",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:127"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80330724
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on close button",
+            "line": 16,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:132"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175945917
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38040
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22619
+            }
+          }
+        ]
+      },
+      {
+        "id": "visiting-product-details-and-checking-page-properties;checking-wrong-email-on-newsletter",
+        "keyword": "Scenario",
+        "name": "Checking wrong email on newsletter",
+        "description": "",
+        "line": 19,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@desktop",
+            "line": 18
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29816
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 144542149
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 20,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11767627029
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I enter \"#NewsletterEmail\" as \"serbest\"",
+            "line": 21,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 913777150
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I check privacy agreement checkbox",
+            "line": 22,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:118"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 371727254
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I click on arrow on newsletter",
+            "line": 23,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:122"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3328497596
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should see message box with text \"Geçerli e-posta giriniz\"",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:127"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139407745
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on close button",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:132"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 476898773
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 83277
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 69398
+            }
+          }
+        ]
+      },
+      {
+        "id": "visiting-product-details-and-checking-page-properties;checking-each-footer-links",
+        "keyword": "Scenario",
+        "name": "Checking each footer links",
+        "description": "",
+        "line": 28,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@desktop",
+            "line": 27
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27759
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115352427
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I visit the Yargici homepage",
+            "line": 29,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10489111750
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Hikayemiz\" on footer",
+            "line": 30,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5665815902
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/hakkimizda\"",
+            "line": 31,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2030744746
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Kurumsal\" on footer",
+            "line": 32,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9119911089
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/kurumsal\"",
+            "line": 33,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3853192399
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Kariyer\" on footer",
+            "line": 34,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5959928196
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/kariyer\"",
+            "line": 35,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2254265648
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Mağazalar\" on footer",
+            "line": 36,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10908934215
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/magazalar\"",
+            "line": 37,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2191381519
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Site Haritası\" on footer",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14379732669
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/sitemap\"",
+            "line": 39,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6291038232
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Gizlilik Politikası\" on footer",
+            "line": 40,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4464692481
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/gizlilik-politikasi\"",
+            "line": 41,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3229169880
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Sıkça Sorulan Sorular\" on footer",
+            "line": 42,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2979183759
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/sikca-sorulan-sorular\"",
+            "line": 43,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2112200227
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "I click on \"Bize Ulaşın\" on footer",
+            "line": 44,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5011777570
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I should be redirected to \"/t/bize-ulasin\"",
+            "line": 45,
+            "match": {
+              "location": "features/step_definitions/step_definitions.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2014138121
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:2"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31358
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.23/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23133
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
