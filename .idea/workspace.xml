@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb50f74-9048-494c-a089-e4df3c3d127a" name="Default" comment="Moved feature files from features folder to project folder. Added 2 files written at the event of 28.04.2015">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cucumber_failures.log" beforeDir="false" afterPath="$PROJECT_DIR$/cucumber_failures.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/Mobile_OrderComplete.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/Mobile_OrderComplete.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/features/step_definitions/step_definitions.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber.Scenario: Order complete through product details and cart on mobile (1)">
+  <component name="RunManager" selected="Cucumber.Scenario: Register a new user (3)">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -327,7 +325,7 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration name="Scenario: Order complete through product details and cart on mobile (1)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Scenario: Register a new user (1)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -350,9 +348,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_OrderComplete.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Register.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart on mobile$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Register a new user$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -365,7 +363,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Scenario: Order complete through product details and cart on mobile (2)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Scenario: Register a new user (2)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -388,9 +386,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_OrderComplete.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_Register.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart on mobile$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Register a new user$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -403,7 +401,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Scenario: Order complete through product details and cart on mobile (4)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Scenario: Register a new user (3)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -426,9 +424,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_OrderComplete.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_Register.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart on mobile$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Register a new user$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -441,7 +439,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Scenario: Order complete through product details and cart on mobile (5)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Scenario: Register a new user" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -464,9 +462,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_OrderComplete.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Register.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart on mobile$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Register a new user$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -479,7 +477,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="Scenario: Order complete through product details and cart on mobile" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="Sorting.feature" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="WebAuto" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -502,9 +500,9 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Mobile_OrderComplete.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/Sorting.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Order complete through product details and cart on mobile$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -621,11 +619,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart on mobile (1)" />
-        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart on mobile" />
-        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart on mobile (5)" />
-        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart on mobile (4)" />
-        <item itemvalue="Cucumber.Scenario: Order complete through product details and cart on mobile (2)" />
+        <item itemvalue="Cucumber.Scenario: Register a new user (3)" />
+        <item itemvalue="Cucumber.Scenario: Register a new user (2)" />
+        <item itemvalue="Cucumber.Scenario: Register a new user (1)" />
+        <item itemvalue="Cucumber.Scenario: Register a new user" />
+        <item itemvalue="Cucumber.Sorting.feature" />
       </list>
     </recent_temporary>
   </component>
@@ -657,7 +655,8 @@
       <workItem from="1572598436313" duration="2253000" />
       <workItem from="1572689805874" duration="865000" />
       <workItem from="1573456490634" duration="15361000" />
-      <workItem from="1573799511596" duration="17187000" />
+      <workItem from="1573799511596" duration="30288000" />
+      <workItem from="1574500012040" duration="2402000" />
     </task>
     <task id="LOCAL-00001" summary="committing the feature file from event of 21.04.2015">
       <created>1429689406378</created>
@@ -696,7 +695,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Apply_promotion_code_on_mobile.rcov" NAME="Scenario: Apply promotion code on mobile Coverage Results" MODIFIED="1571386420476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Filter_category__1_.rcov" NAME="Scenario: Filter category (1) Coverage Results" MODIFIED="1568543571522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Apply_promotion_code.rcov" NAME="Scenario: Apply promotion code Coverage Results" MODIFIED="1571402825061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__1_.rcov" NAME="Scenario: Register a new user (1) Coverage Results" MODIFIED="1573999955936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__1_.rcov" NAME="Scenario: Register a new user (1) Coverage Results" MODIFIED="1574078069375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_new_address_to_user_logged_in_on_mobile_browser__2_.rcov" NAME="Scenario: Add new address to user logged in on mobile browser (2) Coverage Results" MODIFIED="1568640007387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Requesting_new_password__2_.rcov" NAME="Scenario: Requesting new password (2) Coverage Results" MODIFIED="1570445181349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Checking_wrong_email_on_newsletter_on_mobile.rcov" NAME="Scenario: Checking wrong email on newsletter on mobile Coverage Results" MODIFIED="1571211974000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
@@ -866,7 +865,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Login_page_through_favourites_button__4_.rcov" NAME="Scenario: Login page through favourites button (4) Coverage Results" MODIFIED="1570716036679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_product_to_basket_and_verify_cart_on_mobile__1_.rcov" NAME="Scenario: Add product to basket and verify cart on mobile (1) Coverage Results" MODIFIED="1570785647386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Checking_product_detail_items__1_.rcov" NAME="Scenario: Checking product detail items (1) Coverage Results" MODIFIED="1570992051930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Sorting_feature.rcov" NAME="Sorting.feature Coverage Results" MODIFIED="1568719055200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Sorting_feature.rcov" NAME="Sorting.feature Coverage Results" MODIFIED="1574064839131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Check_footer_links.rcov" NAME="Scenario: Check footer links Coverage Results" MODIFIED="1568701315980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@All_features_in_TheDealWebAutomation__WebAuto.rcov" NAME="All features in TheDealWebAutomation: WebAuto Coverage Results" MODIFIED="1567491033315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Visit_home_page_and_check_navigation__2_.rcov" NAME="Scenario: Visit home page and check navigation (2) Coverage Results" MODIFIED="1567005019888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
@@ -892,7 +891,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Checking_each_footer_links_on_mobile__3_.rcov" NAME="Scenario: Checking each footer links on mobile (3) Coverage Results" MODIFIED="1571212768024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Enter_promotion_code_to_get_discount__2_.rcov" NAME="Scenario: Enter promotion code to get discount (2) Coverage Results" MODIFIED="1568026804548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Check_footer_links__1_.rcov" NAME="Scenario: Check footer links (1) Coverage Results" MODIFIED="1567594005696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user.rcov" NAME="Scenario: Register a new user Coverage Results" MODIFIED="1573821757275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user.rcov" NAME="Scenario: Register a new user Coverage Results" MODIFIED="1574074852167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Login_page_through_favourites_button__5_.rcov" NAME="Scenario: Login page through favourites button (5) Coverage Results" MODIFIED="1570710865713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_product_to_basket_and_verify__5_.rcov" NAME="Scenario: Add product to basket and verify (5) Coverage Results" MODIFIED="1567587368263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_new_address_to_user_logged_in__2_.rcov" NAME="Scenario: Add new address to user logged in (2) Coverage Results" MODIFIED="1568815992364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
@@ -922,7 +921,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Filter_category__3_.rcov" NAME="Scenario: Filter category (3) Coverage Results" MODIFIED="1568544245538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Enter_promotion_code_to_get_discount__4_.rcov" NAME="Scenario: Enter promotion code to get discount (4) Coverage Results" MODIFIED="1568015158660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@ProductDetails_feature.rcov" NAME="ProductDetails.feature Coverage Results" MODIFIED="1567663678082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__3_.rcov" NAME="Scenario: Register a new user (3) Coverage Results" MODIFIED="1568984516284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__3_.rcov" NAME="Scenario: Register a new user (3) Coverage Results" MODIFIED="1574754166884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_new_address_to_user_logged_in__5_.rcov" NAME="Scenario: Add new address to user logged in (5) Coverage Results" MODIFIED="1568639110853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Enter_promotion_code_to_get_discount__3_.rcov" NAME="Scenario: Enter promotion code to get discount (3) Coverage Results" MODIFIED="1568015093814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Visiting_category_pages_and_and_applying_sortings_price_high_to_low_on_mobile.rcov" NAME="Scenario: Visiting category pages and and applying sortings price high to low on mobile Coverage Results" MODIFIED="1570780390559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
@@ -930,7 +929,7 @@
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Requesting_new_password__1_.rcov" NAME="Scenario: Requesting new password (1) Coverage Results" MODIFIED="1570445075210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Check_footer_links__2_.rcov" NAME="Scenario: Check footer links (2) Coverage Results" MODIFIED="1567594042424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_product_to_basket_and_verify_cart_on_mobile__5_.rcov" NAME="Scenario: Add product to basket and verify cart on mobile (5) Coverage Results" MODIFIED="1570785598382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
-    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__2_.rcov" NAME="Scenario: Register a new user (2) Coverage Results" MODIFIED="1571395162171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
+    <SUITE FILE_PATH="coverage/WebAuto@Scenario__Register_a_new_user__2_.rcov" NAME="Scenario: Register a new user (2) Coverage Results" MODIFIED="1574753903550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Get_links_of_link_checker_you_may_delete_this_when_you_notice.rcov" NAME="Scenario: Get links of link checker you may delete this when you notice Coverage Results" MODIFIED="1572547541845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Add_new_address_to_user_logged_in__4_.rcov" NAME="Scenario: Add new address to user logged in (4) Coverage Results" MODIFIED="1568816467616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />
     <SUITE FILE_PATH="coverage/WebAuto@Scenario__Checking_footer_links__1_.rcov" NAME="Scenario: Checking footer links (1) Coverage Results" MODIFIED="1573741758217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="WebAuto" />

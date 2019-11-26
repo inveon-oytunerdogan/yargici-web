@@ -496,7 +496,8 @@ And(/^I navigate to register user page on mobile$/) do
   sleep 2
   find(:xpath, '/html/body/header/div[1]/div[1]/div/div/div/div[2]/div/ul/li[2]/a/i').click
   sleep 1
-  find(:xpath, "/html/body/div[9]/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
+  page.execute_script('$(".sp-advanced-css-345").remove()')
+  find(:xpath, "/html/body/div[9]/div/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
   sleep 1
 end
 
