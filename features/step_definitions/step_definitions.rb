@@ -170,7 +170,7 @@ And(/^I click on save address button$/) do
 end
 
 And(/^I select size variant$/) do
-  first(".size-list-label", visible: true).click
+  first(".size-list-label:not(.attribute-value-out-of-stock)").click
 end
 
 And(/^I add product to basket$/) do
