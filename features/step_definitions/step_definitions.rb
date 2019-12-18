@@ -84,7 +84,7 @@ end
 Then(/^I check footer links under YARGICI$/) do |table|
   # table is a table.hashes.keys # => [:Hikayemiz, :Kurumsal, :Kariyer, :Mağazalar]
   table = table.raw[0]
-  links = all(".footer-list-menu")[0].all(".d-block")
+  links = find(".footer-content-container").all(".footer-list-menu")[0].all(".d-block")
   expect(links[0].text).to eq(table[0])
   expect(links[1].text).to eq(table[1])
   expect(links[2].text).to eq(table[2])
@@ -95,7 +95,7 @@ end
 And(/^I check footer links under YARDIM$/) do |table|
   # table is a table.hashes.keys # => [:Site Haritası, :Gizlilik Politikası, :Sıkça Sorulan Sorular, :Bize Ulaşın]
   table = table.raw[0]
-  links = all(".footer-list-menu")[1].all(".d-block")
+  links = find(".footer-content-container").all(".footer-list-menu")[1].all(".d-block")
   expect(links[0].text).to eq(table[0])
   expect(links[1].text).to eq(table[1])
   expect(links[2].text).to eq(table[2])
@@ -105,7 +105,7 @@ end
 And(/^I check footer links under KATEGORİLER$/) do |table|
   # table is a table.hashes.keys # => [:Elbise, :Ayakkabı, :Çanta, :Kazak, :Şal, :Homeworks]
   table = table.raw[0]
-  links = all(".footer-list-menu")[2].all(".d-block")
+  links = find(".footer-content-container").all(".footer-list-menu")[2].all(".d-block")
   expect(links[0].text).to eq(table[0])
   expect(links[1].text).to eq(table[1])
   expect(links[2].text).to eq(table[2])
@@ -116,7 +116,7 @@ And(/^I check footer links under KATEGORİLER$/) do |table|
 end
 
 And(/^I check privacy agreement checkbox$/) do
-  find(:xpath, '/html/body/footer/div[2]/div/div[1]/div/div/div/div[4]/div/div[3]/div/label').click
+  find(:xpath, '/html/body/footer/div[2]/div/div[1]/div/div/div/div[4]/div/div[2]/div[2]/div/label').click
 end
 
 When(/^I click on arrow on newsletter$/) do
@@ -134,7 +134,7 @@ And(/^I click on close button$/) do
 end
 
 And(/^I click on "([^"]*)" on footer$/) do |arg|
-  find("a", :text => arg, match: :first).click
+  find(".footer-content-container").find("a", :text => arg, match: :first).click
 end
 
 And(/^I click on forgot password button$/) do
