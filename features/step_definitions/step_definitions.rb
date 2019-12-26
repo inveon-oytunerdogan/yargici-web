@@ -2,7 +2,7 @@
 
 Given(/^I visit the Yargici homepage$/) do
   visit 'https://www.yargici.com/'
-  sleep 6
+  sleep 3
 end
 
 And(/^I navigate to login page$/) do
@@ -299,13 +299,13 @@ end
 And(/^I select price high to low sorting$/) do
   find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
   find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").all("option")[2].click
-
+  sleep 1
 end
 
 
 
 Then(/^I should see products are sorted price high to low$/) do
-  products = all(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary")
+  products = all(".product-box-image-container.position-relative.d-block")
   arr = []
   products.each{|x|
     arr << x.text.split(" ")[0]
@@ -320,10 +320,11 @@ end
 When(/^I select price low to high sorting$/) do
   find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
   find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").all("option")[1].click
+  sleep 1
 end
 
 Then(/^I should see products are sorted price low to high$/) do
-  products = all(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary")
+  products = all(".product-box-image-container.position-relative.d-block")
   arr = []
   products.each{|product|
     arr.push(product.text.split(" ")[0].to_i)
@@ -351,9 +352,10 @@ end
 
 And(/^I apply size filter$/) do
   page.execute_script('$(".sp-advanced-css-345").remove()')
-  first(".spec-list.p-0.no-list.my-2").all(".spec-box.text-spec.d-inline-block.text-center.border")[0].click
+  find(:xpath, '//*[@id="filters-item"]/div/div/div[1]/ul/li[1]/span').click
+  find(".spec-box.text-spec.d-inline-block.text-center.border[data-spec-id='70']").click
   sleep 1
-  find("#filterByPrice").click
+  first(".btn.btn-site-primary.font-weight-bold.rounded-0.filterByPrice.w-100.mt-3").click
 end
 
 Then(/^I should see filter is applied$/) do
@@ -361,6 +363,7 @@ Then(/^I should see filter is applied$/) do
 end
 
 And(/^I remove applied filter$/) do
+  find(".static-text[data-key-name='Filtering.SpecificationFilter.CurrentlyFilteredBy']").click
   find(:xpath, '//*[@id="filters-item"]/div/div/div[1]/ul/li[1]/ul/li[2]/a/span').click
   page.driver.browser.manage.window.resize_to(1440,900)
 end
@@ -438,9 +441,10 @@ end
 And(/^I apply size filter on mobile$/) do
   page.execute_script('$(".sp-advanced-css-345").remove()')
   find(".toggle-filter-area.d-none.text-white.text-lg-center.rounded-circle.bg-site-primary.p-2.border-0").click
+  find(".btn-cursor.closed[data-attribute-name='beden']").click
   sleep 1
   find(".spec-list.p-0.no-list.my-2",match: :first).all(".spec-box.text-spec.d-inline-block.text-center.border")[0].click
-  find("#filterByPrice").click
+  first(".static-text[data-key-name='Common.Filter']").click
 end
 
 And(/^I click on filter button on mobile$/) do
@@ -464,7 +468,8 @@ And(/^I should see product prices are in price filter interval on mobile$/) do
 end
 
   And(/^I navigate to login page on mobile$/) do
-  find(".icon-ico_mini-member-on.align-middle.user-icon").click
+  #find(".icon-ico_mini-member-on.align-middle.user-icon").click
+    find(:xpath, '/html/body/header/div[1]/div[1]/div/div[1]/div/div[2]/div/ul/li[2]/a/i').click
     sleep 4
 end
 
@@ -494,10 +499,10 @@ end
 
 And(/^I navigate to register user page on mobile$/) do
   sleep 2
-  find(:xpath, '/html/body/header/div[1]/div[1]/div/div/div/div[2]/div/ul/li[2]/a/i').click
+  find(:xpath, '/html/body/header/div[1]/div[1]/div/div[1]/div/div[2]/div/ul/li[2]/a/i').click
   sleep 1
   page.execute_script('$(".sp-advanced-css-345").remove()')
-  find(:xpath, "/html/body/div[9]/div/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
+  find(:xpath, "/html/body/div[10]/div/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
   sleep 1
 end
 
@@ -586,4 +591,12 @@ end
 And(/^I select shipment and billing address checkboxes on mobile$/) do
   find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label').click
   find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label').click
+end
+
+And(/^I select Fiyat Filter$/) do
+  find(:xpath,"/html/body/div[10]/div/div[1]/div/div/div/div[2]/div/div/div/div[2]/span").click
+end
+
+And(/^I click on apply filter on price filter$/) do
+  find(:xpath, "/html/body/div[10]/div/div[1]/div/div/div/div[2]/div/div/div/div[2]/ul/button").click
 end

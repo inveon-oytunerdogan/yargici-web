@@ -4,7 +4,7 @@ Feature: Visiting product details and checking page properties
    Scenario: Checking footer links
     Given I visit the Yargici homepage
     Then I check footer links under YARGICI
-    |Hikayemiz|Kurumsal|Kariyer|Mağazalar|
+    |Hikayemiz|Kurumsal|Franchise|Kariyer|Mağazalar|
     And I check footer links under YARDIM
     |Site Haritası|Gizlilik Politikası|Sıkça Sorulan Sorular|KVKK|Bize Ulaşın|
     And I check footer links under KATEGORİLER

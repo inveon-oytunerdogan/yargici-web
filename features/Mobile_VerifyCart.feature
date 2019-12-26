@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
   @mobile @clear_basket_mobile
- Scenario: Add product to basket and verify cart
+ Scenario: Add product to basket and verify cart on mobile
    Given I visit the Yargici homepage
    And I click on hamburger
    And I search for "sırt çantası" on mobile
