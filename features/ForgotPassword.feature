@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Forgetting password
   Make sure Cucumber and Capybara are wired up properly
  @desktop
  Scenario: Requesting new password

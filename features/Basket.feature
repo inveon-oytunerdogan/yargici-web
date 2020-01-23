@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Add to cart and verify cart
   Make sure Cucumber and Capybara are wired up properly
  @desktop
    Scenario: Check product is same as added on basket

@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Checking and visiting footer elements
   Make sure Cucumber and Capybara are wired up properly
  @desktop
    Scenario: Checking footer links

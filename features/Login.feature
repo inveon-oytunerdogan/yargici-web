@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Login and logout of the system
   Make sure Cucumber and Capybara are wired up properly
    @log_out @desktop
    Scenario: Login on home page

@@ -20,7 +20,9 @@ Feature: Visiting product details and checking page properties
     And I select Fiyat Filter
     And I enter "#priceMin" as "68.00"
     And I enter "#priceMax" as "1799.00"
-    And I click on apply filter on price filter
+    And I click on apply price filter button
+    #And I click on apply filter button on mobile
+    And I sleep for "1" seconds
     And I should see product prices are in price filter interval on mobile
 
 

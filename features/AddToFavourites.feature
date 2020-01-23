@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Login page through favorites and logged in user
   Make sure Cucumber and Capybara are wired up properly
  @desktop
    Scenario: Login page through favourites button
@@ -9,7 +9,7 @@ Feature: Visiting product details and checking page properties
     And I should be redirected to "login"
 
 
-   @clear_favourites @log_out @desktop
+  @desktop @clear_favourites @log_out
    Scenario: Logged in user add to favourites
     Given I visit the Yargici homepage
     And I navigate to login page

@@ -1,4 +1,4 @@
-Feature: Visiting product details and checking page properties
+Feature: Ensure size and price filters are working
   Make sure Cucumber and Capybara are wired up properly
   @desktop
  Scenario: Visiting category pages and applying filter options

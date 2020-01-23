@@ -419,6 +419,8 @@ And(/^I select size variant on mobile$/) do
 end
 
 And(/^I add product to basket on mobile$/) do
+  expect(page).to have_selector(".ins-preview-wrapper")
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(".add-to-cart-button.btn.rounded-0.text-white.font-weight-bold.col-12").click
   sleep 1
 end
@@ -456,11 +458,11 @@ And(/^I click on apply filter button on mobile$/) do
 end
 
 And(/^I should see product prices are in price filter interval on mobile$/) do
-  list = find(".container-fluid.product-list-container").all(".col-6.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.product-grid-item-container.p-0")
+  list = all(".product-price-list.list-inline.text-center")
   list.each{|li|
-    puts li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
-    li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
-    li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
+    puts li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider)").text.split(" ")[0]
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider)").text.split(" ")[0].to_i.should be > $price_min
+    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider)").text.split(" ")[0].to_i.should be < $price_max
   }
 end
 
@@ -600,4 +602,8 @@ end
 
 And(/^I click on price filter button$/) do
   find(".static-text[data-key-name='Filtering.PriceRangeFilter']").click
+end
+
+And(/^I sleep for "([^"]*)" seconds$/) do |arg|
+  sleep arg.to_i
 end
