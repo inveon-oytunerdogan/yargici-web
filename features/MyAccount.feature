@@ -27,7 +27,7 @@ Feature: Visiting product details and checking page properties
   And I enter "#Address_Address1" as "5. Gazeteciler Sitesi 2. Söltaş Evleri K:14 Akatlar Istanbul Testtir"
   And I click on save address button
 
-
+ @log_out
   Scenario: Delete all addresses
    Given I visit the Yargici homepage
    And I navigate to login page

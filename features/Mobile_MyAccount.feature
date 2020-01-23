@@ -1,7 +1,7 @@
 Feature: Visiting product details and checking page properties
   Make sure Cucumber and Capybara are wired up properly
 
- @mobile @log_out_mobile
+ @mobile @delete_address @log_out_mobile
  Scenario:Adding new address on my account on mobile
   Given I visit the Yargici homepage
   And I navigate to login page on mobile

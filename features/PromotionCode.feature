@@ -14,6 +14,7 @@ Feature: Visiting product details and checking page properties
      And I select size variant
      And I add product to basket
      And I visit basket
+     #bug var PL-31426
      When I enter promotion code as "OYTUNTEST"
      And I should see discount applied message
      And I cancel promotion code

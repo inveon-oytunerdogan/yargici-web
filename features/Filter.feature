@@ -13,9 +13,10 @@ Feature: Visiting product details and checking page properties
    Scenario: Checking price range filter and products listed
      Given I visit the Yargici homepage
      And I click on Giyim on navigation
+     And I click on price filter button
      And I enter "#priceMin" as "68.00"
      And I enter "#priceMax" as "1799.00"
-     And I click on apply filter button
+     And I click on apply price filter button
      And I should see product prices are in price filter interval
 
 

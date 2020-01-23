@@ -208,7 +208,7 @@ And(/^I visit basket$/) do
 end
 
 And(/^I click on checkout button$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   sleep 0.5
   find("#checkout").click
   sleep 3
@@ -232,15 +232,15 @@ And(/^I click on save on edit address on checkout$/) do
 end
 
 And(/^I click complete order button$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(:xpath, '//*[@id="form-submit"]/span').click
   sleep 2
 end
 
 Then(/^I enter credit card information$/) do |table|
   sleep 4
-   page.execute_script('$(".sp-advanced-css-345").remove()')
-   puts "ENtering credit card number"
+  page.execute_script('$(".ins-preview-wrapper").remove()')
+   puts "Entering credit card number"
   # table is a table.hashes.keys # => [:5101521710307762, :12, :23, :326]
   table = table.raw[0]
    find("#CardNumber").click
@@ -271,7 +271,7 @@ And(/^I read and accept distance purchase form$/) do
 end
 
 And(/^I click on complete button between basket and cart$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(".register-button.btn.w-100.btn.rounded-0.p-3.font-weight-bold.btn-black.mobile-fixed-button.mt-md-3").click
   sleep 4
 end
@@ -297,7 +297,7 @@ And(/^I check recommendation carousels$/) do
 end
 
 And(/^I select price high to low sorting$/) do
-  find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
+  find("select.d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").click
   find(".d-inline-block.align-middle.form-control.rounded-0.p-1.sort-position.border-0").all("option")[2].click
   sleep 1
 end
@@ -305,16 +305,14 @@ end
 
 
 Then(/^I should see products are sorted price high to low$/) do
-  products = all(".product-box-image-container.position-relative.d-block")
-  arr = []
-  products.each{|x|
+arr =[]
+  list = all(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider)")
+  list.each{|x|
     arr << x.text.split(" ")[0]
-
   }
   puts arr
   arr.sort { |a,b| b <=> a}
   expect(arr).to eq(arr)
-
 end
 
 When(/^I select price low to high sorting$/) do
@@ -351,7 +349,7 @@ And(/^I should see visited product is added to basket$/) do
 end
 
 And(/^I apply size filter$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(:xpath, '//*[@id="filters-item"]/div/div/div[1]/ul/li[1]/span').click
   find(".spec-box.text-spec.d-inline-block.text-center.border[data-spec-id='70']").click
   sleep 1
@@ -369,9 +367,7 @@ And(/^I remove applied filter$/) do
 end
 
 And(/^I close privacy policy message$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
-
-
+  page.execute_script('$(".ins-preview-wrapper").remove()')
 end
 
 And(/^I click edit address button on basket$/) do
@@ -385,10 +381,10 @@ And(/^I select shipment and billing address checkboxes$/) do
   find(:xpath,'//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label', match: :first).click
 end
 
-And(/^I click on apply filter button$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+And(/^I click on apply price filter button$/) do
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   sleep 1
-  find("#filterByPrice").click
+  all(".btn.btn-site-primary.font-weight-bold.rounded-0.filterByPrice.w-100.mt-3")[2].click
   $price_min = find_field("priceMin").value.to_i
   $price_max = find_field("priceMax").value.to_i
   sleep 2
@@ -401,11 +397,12 @@ And(/^I click on Indirim on navigation$/) do
 end
 
 And(/^I should see product prices are in price filter interval$/) do
-  list = all(".product-box-container.p-2")
-  list.each{|li|
-    puts li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
-    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
-    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
+  list = all(".product-price-list.list-inline.text-center")
+  list.each{|ul|
+    # fiyatları görmek için yorumu aç
+   # puts ul.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider").text.split(" ")[0]
+    ul.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider").text.split(" ")[0].to_i.should be > $price_min
+    ul.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary:not(.for-insider").text.split(" ")[0].to_i.should be < $price_max
   }
 end
 
@@ -414,21 +411,21 @@ And(/^I click on hamburger$/) do
 end
 
 And(/^I select size variant on mobile$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  expect(page).to have_selector(".ins-preview-wrapper")
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(:xpath, '//*[@id="product-details-form"]/div/div[1]/div/div[2]/div/div[2]/div[1]').click
   find(".list-inline.m-0.p-0.no-list.option-list.options-swatch.options-swatch--size.options-swatch--lg.RadioList").first(".size-list-label").click
 
 end
 
 And(/^I add product to basket on mobile$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
   find(".add-to-cart-button.btn.rounded-0.text-white.font-weight-bold.col-12").click
   sleep 1
 end
 
 And(/^I close information box on mobile$/) do
   sleep 2
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
 end
 
 And(/^I delete basket items on mobile$/) do
@@ -439,7 +436,7 @@ end
 
 
 And(/^I apply size filter on mobile$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(".toggle-filter-area.d-none.text-white.text-lg-center.rounded-circle.bg-site-primary.p-2.border-0").click
   find(".btn-cursor.closed[data-attribute-name='beden']").click
   sleep 1
@@ -448,7 +445,7 @@ And(/^I apply size filter on mobile$/) do
 end
 
 And(/^I click on filter button on mobile$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(".toggle-filter-area.d-none.text-white.text-lg-center.rounded-circle.bg-site-primary.p-2.border-0").click
 end
 
@@ -461,9 +458,9 @@ end
 And(/^I should see product prices are in price filter interval on mobile$/) do
   list = find(".container-fluid.product-list-container").all(".col-6.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.product-grid-item-container.p-0")
   list.each{|li|
-    puts li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
-    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
-    li.find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
+    puts li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0]
+    li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be > $price_min
+    li.all(".list-inline-item")[1].find(".d-block.product-box-prices.product-box-price.pl-1.pr-2.text-site-primary").text.split(" ")[0].to_i.should be < $price_max
   }
 end
 
@@ -493,7 +490,7 @@ And(/^I search for "([^"]*)" on mobile$/) do |arg|
 end
 
 And(/^I click on size button on mobile$/) do
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(:xpath, '//*[@id="product-details-form"]/div/div[1]/div/div[2]/div/div[2]/div[1]').click
 end
 
@@ -501,7 +498,7 @@ And(/^I navigate to register user page on mobile$/) do
   sleep 2
   find(:xpath, '/html/body/header/div[1]/div[1]/div/div[1]/div/div[2]/div/ul/li[2]/a/i').click
   sleep 1
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
   find(:xpath, "/html/body/div[10]/div/div/div/div/div/div[2]/div/div[2]/form/div[5]/a/span").click
   sleep 1
 end
@@ -535,7 +532,7 @@ end
 
 And(/^I click on Kategoriler on footer$/) do
   find(:xpath,'/html/body/footer/div[2]/div/div[1]/div/div/div/div[3]/div/div').click
-  page.execute_script('$(".sp-advanced-css-345").remove()')
+  page.execute_script('$(".ins-preview-wrapper").remove()')
 
 end
 
@@ -589,8 +586,8 @@ Given(/^I visit$/) do
 end
 
 And(/^I select shipment and billing address checkboxes on mobile$/) do
-  find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[2]/div[2]/label').click
-  find(:xpath, '//*[@id="mCSB_1_container"]/table/tbody/tr/td[3]/div[2]/label').click
+  all(".custom-check-label.m-0")[0].click
+  all(".custom-check-label.m-0")[1].click
 end
 
 And(/^I select Fiyat Filter$/) do
@@ -599,4 +596,8 @@ end
 
 And(/^I click on apply filter on price filter$/) do
   find(:xpath, "/html/body/div[10]/div/div[1]/div/div/div/div[2]/div/div/div/div[2]/ul/button").click
+end
+
+And(/^I click on price filter button$/) do
+  find(".static-text[data-key-name='Filtering.PriceRangeFilter']").click
 end

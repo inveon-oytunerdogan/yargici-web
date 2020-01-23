@@ -74,3 +74,7 @@ After('@delete_address') do
   page.driver.browser.switch_to.alert.accept
 
 end
+
+Before('@mobile') do
+  Capybara.current_driver = :chrome414x736
+end
