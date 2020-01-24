@@ -419,7 +419,6 @@ And(/^I select size variant on mobile$/) do
 end
 
 And(/^I add product to basket on mobile$/) do
-  expect(page).to have_selector(".ins-preview-wrapper")
   page.execute_script('$(".ins-preview-wrapper").remove()')
   find(".add-to-cart-button.btn.rounded-0.text-white.font-weight-bold.col-12").click
   sleep 1
